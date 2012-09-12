@@ -1,0 +1,691 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		256AC3DA0F4B6AC300CF3369 /* PasswordUtilityAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* PasswordUtilityAppDelegate.m */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		E103C1AE147C509A00155809 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E103C1AD147C509A00155809 /* Security.framework */; };
+		E103C41C147C777A00155809 /* PasswordUtilityHelper in Resources */ = {isa = PBXBuildFile; fileRef = E103C41B147C777A00155809 /* PasswordUtilityHelper */; };
+		E1200BDE1475BE69001A41A0 /* ProblemReporter.icns in Resources */ = {isa = PBXBuildFile; fileRef = E1200BDD1475BE69001A41A0 /* ProblemReporter.icns */; };
+		E12E915014749FDC00791D59 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12E914F14749FDC00791D59 /* Quartz.framework */; };
+		E12E915A14749FFA00791D59 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12E915914749FFA00791D59 /* QuartzCore.framework */; };
+		E13BE3F214EECA760016CAB2 /* wifiutil.py in Resources */ = {isa = PBXBuildFile; fileRef = E13BE3F114EECA760016CAB2 /* wifiutil.py */; };
+		E13BE7C514EF34520016CAB2 /* kcutil in Resources */ = {isa = PBXBuildFile; fileRef = E13BE7C414EF34520016CAB2 /* kcutil */; };
+		E14336D91541F2950038C1A7 /* checkBatt.sh in Resources */ = {isa = PBXBuildFile; fileRef = E14336D81541F2950038C1A7 /* checkBatt.sh */; };
+		E148780C14FE5F7300B23C54 /* com.github.winnebago.remove.plist in Resources */ = {isa = PBXBuildFile; fileRef = E148780B14FE5F7300B23C54 /* com.github.winnebago.remove.plist */; };
+		E152450814FBD5D700F7E693 /* dsconfig.sh in Resources */ = {isa = PBXBuildFile; fileRef = E152450714FBD5D700F7E693 /* dsconfig.sh */; };
+		E152451914FBD68100F7E693 /* .winnebago.conf in Resources */ = {isa = PBXBuildFile; fileRef = E152451814FBD68100F7E693 /* .winnebago.conf */; };
+		E152455314FD7EDA00F7E693 /* addToDock.sh in Resources */ = {isa = PBXBuildFile; fileRef = E152455214FD7EDA00F7E693 /* addToDock.sh */; };
+		E152455514FD7F0300F7E693 /* cacheAD.sh in Resources */ = {isa = PBXBuildFile; fileRef = E152455414FD7F0300F7E693 /* cacheAD.sh */; };
+		E152455714FD7F2D00F7E693 /* copyLogs.sh in Resources */ = {isa = PBXBuildFile; fileRef = E152455614FD7F2D00F7E693 /* copyLogs.sh */; };
+		E152455914FD7F3300F7E693 /* createMacTempUser.sh in Resources */ = {isa = PBXBuildFile; fileRef = E152455814FD7F3300F7E693 /* createMacTempUser.sh */; };
+		E152455B14FD7F4700F7E693 /* migrateAccount.sh in Resources */ = {isa = PBXBuildFile; fileRef = E152455A14FD7F4700F7E693 /* migrateAccount.sh */; };
+		E152455D14FD7F6200F7E693 /* removeDockIcon.sh in Resources */ = {isa = PBXBuildFile; fileRef = E152455C14FD7F6200F7E693 /* removeDockIcon.sh */; };
+		E152455F14FD7F6E00F7E693 /* revertChanges.sh in Resources */ = {isa = PBXBuildFile; fileRef = E152455E14FD7F6E00F7E693 /* revertChanges.sh */; };
+		E152456114FD7FB800F7E693 /* sendEmail.pl in Resources */ = {isa = PBXBuildFile; fileRef = E152456014FD7FB800F7E693 /* sendEmail.pl */; };
+		E152456314FD7FBD00F7E693 /* sendEmail.sh in Resources */ = {isa = PBXBuildFile; fileRef = E152456214FD7FBD00F7E693 /* sendEmail.sh */; };
+		E15F42EB153CCD2F0073F718 /* fixPerms.sh in Resources */ = {isa = PBXBuildFile; fileRef = E15F42EA153CCD2F0073F718 /* fixPerms.sh */; };
+		E167DC8814855BC4007FC0F9 /* StatusIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E167DC8414855BC4007FC0F9 /* StatusIconCell.m */; };
+		E167DC8914855BC4007FC0F9 /* SummaryWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E167DC8614855BC4007FC0F9 /* SummaryWindowController.m */; };
+		E167DCC01485694B007FC0F9 /* generic_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = E167DCBF1485694B007FC0F9 /* generic_sm.png */; };
+		E16B93C7153F84B300BA052C /* preflight_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = E16B93C6153F84B300BA052C /* preflight_sm.png */; };
+		E16B93D8153F84BF00BA052C /* preFlight.sh in Resources */ = {isa = PBXBuildFile; fileRef = E16B93D7153F84BF00BA052C /* preFlight.sh */; };
+		E16B93F9153F88EE00BA052C /* postFlight.sh in Resources */ = {isa = PBXBuildFile; fileRef = E16B93F8153F88EE00BA052C /* postFlight.sh */; };
+		E1751F321511580200979D43 /* inventoryUpdate.sh in Resources */ = {isa = PBXBuildFile; fileRef = E1751F311511580200979D43 /* inventoryUpdate.sh */; };
+		E1751F3715115B4D00979D43 /* inventory_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = E1751F3615115B4D00979D43 /* inventory_sm.png */; };
+		E17F9D7D1475D75C00EAB35D /* NetworkCheck.icns in Resources */ = {isa = PBXBuildFile; fileRef = E17F9D7C1475D75C00EAB35D /* NetworkCheck.icns */; };
+		E19A1C5A149FFF560043DE79 /* Plugins.m in Sources */ = {isa = PBXBuildFile; fileRef = E19A1C59149FFF560043DE79 /* Plugins.m */; };
+		E19CBD9A14861B8100BF8364 /* lrg_green.png in Resources */ = {isa = PBXBuildFile; fileRef = E19CBD9714861B8100BF8364 /* lrg_green.png */; };
+		E19CBD9B14861B8100BF8364 /* lrg_red.png in Resources */ = {isa = PBXBuildFile; fileRef = E19CBD9814861B8100BF8364 /* lrg_red.png */; };
+		E19CBD9C14861B8100BF8364 /* lrg_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = E19CBD9914861B8100BF8364 /* lrg_yellow.png */; };
+		E19CBE571486B8F200BF8364 /* cached_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = E19CBE541486B8F200BF8364 /* cached_sm.png */; };
+		E19CBE581486B8F200BF8364 /* wireless_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = E19CBE551486B8F200BF8364 /* wireless_sm.png */; };
+		E19CBE591486B8F200BF8364 /* keychain_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = E19CBE561486B8F200BF8364 /* keychain_sm.png */; };
+		E19CDA3914757FA70095DCE7 /* app.icns in Resources */ = {isa = PBXBuildFile; fileRef = E19CDA3814757FA70095DCE7 /* app.icns */; };
+		E19CDA97147586470095DCE7 /* StatusMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E19CDA96147586470095DCE7 /* StatusMessage.m */; };
+		E19CDA9A147586580095DCE7 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E19CDA99147586580095DCE7 /* Constants.m */; };
+		E19CDA9C147586670095DCE7 /* com.github.winnebago.settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = E19CDA9B147586670095DCE7 /* com.github.winnebago.settings.plist */; };
+		E19CDB1314758EC40095DCE7 /* changeKeychainPass.sh in Resources */ = {isa = PBXBuildFile; fileRef = E19CDB0B14758EC40095DCE7 /* changeKeychainPass.sh */; };
+		E19CDB1414758EC40095DCE7 /* checkBind.sh in Resources */ = {isa = PBXBuildFile; fileRef = E19CDB0C14758EC40095DCE7 /* checkBind.sh */; };
+		E19CDB1514758EC40095DCE7 /* checkUser.sh in Resources */ = {isa = PBXBuildFile; fileRef = E19CDB0D14758EC40095DCE7 /* checkUser.sh */; };
+		E19CDB1614758EC40095DCE7 /* common.sh in Resources */ = {isa = PBXBuildFile; fileRef = E19CDB0E14758EC40095DCE7 /* common.sh */; };
+		E19CDB1714758EC40095DCE7 /* Wireless.sh in Resources */ = {isa = PBXBuildFile; fileRef = E19CDB0F14758EC40095DCE7 /* Wireless.sh */; };
+		E19CDB1814758EC40095DCE7 /* getUserDetails.sh in Resources */ = {isa = PBXBuildFile; fileRef = E19CDB1014758EC40095DCE7 /* getUserDetails.sh */; };
+		E19CDB1914758EC40095DCE7 /* netCheck.sh in Resources */ = {isa = PBXBuildFile; fileRef = E19CDB1114758EC40095DCE7 /* netCheck.sh */; };
+		E19F672A1474B51300B0A72E /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E19F67291474B51300B0A72E /* Python.framework */; };
+		E1A6ACA015028D8F00802E6C /* companyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A6AC9F15028D8F00802E6C /* companyLogo.png */; };
+		E1A6ACCE15059D6900802E6C /* mail_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A6ACCD15059D6900802E6C /* mail_sm.png */; };
+		E1A6ACD015059E5300802E6C /* logs_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A6ACCF15059E5300802E6C /* logs_sm.png */; };
+		E1A6ACD215059F1A00802E6C /* migrate_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A6ACD115059F1A00802E6C /* migrate_sm.png */; };
+		E1A6ACD415059FA500802E6C /* tmp_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A6ACD315059FA500802E6C /* tmp_sm.png */; };
+		E1A6AD141505BC3600802E6C /* dir_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A6AD131505BC3600802E6C /* dir_sm.png */; };
+		E1C89622147B22E700472E5D /* mcedit.py in Resources */ = {isa = PBXBuildFile; fileRef = E1C89621147B22E700472E5D /* mcedit.py */; };
+		E1CD1C7B153F338A006096BD /* checkLocalBind.sh in Resources */ = {isa = PBXBuildFile; fileRef = E1CD1C7A153F338A006096BD /* checkLocalBind.sh */; };
+		E1DE985A14772C9000F77751 /* platformExpert in Resources */ = {isa = PBXBuildFile; fileRef = E1DE985914772C9000F77751 /* platformExpert */; };
+		E1F20854153E73CC00E25495 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F20853153E73CC00E25495 /* WebKit.framework */; };
+		E1F2087C153E7F5E00E25495 /* proceedPanel.html in Resources */ = {isa = PBXBuildFile; fileRef = E1F2087B153E7F5E00E25495 /* proceedPanel.html */; };
+		E1F2090B153E9AA600E25495 /* FullScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F2090A153E9AA600E25495 /* FullScreenController.m */; };
+		E1F20913153E9BAF00E25495 /* FullScreenWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1F20912153E9BAF00E25495 /* FullScreenWindow.xib */; };
+		E1F58B2314EC7D51005B03D5 /* wifiutil.settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1F58B2214EC7D51005B03D5 /* wifiutil.settings.plist */; };
+		E1FC91EF1485874D0074C21D /* GlobalStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FC91EE1485874D0074C21D /* GlobalStatus.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		256AC3D80F4B6AC300CF3369 /* PasswordUtilityAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordUtilityAppDelegate.h; sourceTree = "<group>"; };
+		256AC3D90F4B6AC300CF3369 /* PasswordUtilityAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordUtilityAppDelegate.m; sourceTree = "<group>"; };
+		256AC3F00F4B6AF500CF3369 /* Winnebago_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Winnebago_Prefix.pch; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		8D1107310486CEB800E47090 /* Winnebago-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Winnebago-Info.plist"; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* Winnebago.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Winnebago.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E103C1AD147C509A00155809 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E103C41B147C777A00155809 /* PasswordUtilityHelper */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = PasswordUtilityHelper; sourceTree = "<group>"; };
+		E1200BDD1475BE69001A41A0 /* ProblemReporter.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ProblemReporter.icns; sourceTree = "<group>"; };
+		E12E914F14749FDC00791D59 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		E12E915914749FFA00791D59 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E13BE3F114EECA760016CAB2 /* wifiutil.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = wifiutil.py; sourceTree = "<group>"; };
+		E13BE7C414EF34520016CAB2 /* kcutil */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = kcutil; sourceTree = "<group>"; };
+		E14336D81541F2950038C1A7 /* checkBatt.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = checkBatt.sh; sourceTree = "<group>"; };
+		E148780B14FE5F7300B23C54 /* com.github.winnebago.remove.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = com.github.winnebago.remove.plist; sourceTree = "<group>"; };
+		E152450714FBD5D700F7E693 /* dsconfig.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsconfig.sh; sourceTree = "<group>"; };
+		E152451814FBD68100F7E693 /* .winnebago.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = .winnebago.conf; sourceTree = "<group>"; };
+		E152455214FD7EDA00F7E693 /* addToDock.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = addToDock.sh; sourceTree = "<group>"; };
+		E152455414FD7F0300F7E693 /* cacheAD.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = cacheAD.sh; sourceTree = "<group>"; };
+		E152455614FD7F2D00F7E693 /* copyLogs.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = copyLogs.sh; sourceTree = "<group>"; };
+		E152455814FD7F3300F7E693 /* createMacTempUser.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = createMacTempUser.sh; sourceTree = "<group>"; };
+		E152455A14FD7F4700F7E693 /* migrateAccount.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = migrateAccount.sh; sourceTree = "<group>"; };
+		E152455C14FD7F6200F7E693 /* removeDockIcon.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = removeDockIcon.sh; sourceTree = "<group>"; };
+		E152455E14FD7F6E00F7E693 /* revertChanges.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = revertChanges.sh; sourceTree = "<group>"; };
+		E152456014FD7FB800F7E693 /* sendEmail.pl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; path = sendEmail.pl; sourceTree = "<group>"; };
+		E152456214FD7FBD00F7E693 /* sendEmail.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = sendEmail.sh; sourceTree = "<group>"; };
+		E15F42EA153CCD2F0073F718 /* fixPerms.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = fixPerms.sh; sourceTree = "<group>"; };
+		E167DC8314855BC4007FC0F9 /* StatusIconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusIconCell.h; sourceTree = "<group>"; };
+		E167DC8414855BC4007FC0F9 /* StatusIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusIconCell.m; sourceTree = "<group>"; };
+		E167DC8514855BC4007FC0F9 /* SummaryWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryWindowController.h; sourceTree = "<group>"; };
+		E167DC8614855BC4007FC0F9 /* SummaryWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryWindowController.m; sourceTree = "<group>"; };
+		E167DCBF1485694B007FC0F9 /* generic_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = generic_sm.png; sourceTree = "<group>"; };
+		E16B93C6153F84B300BA052C /* preflight_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = preflight_sm.png; sourceTree = "<group>"; };
+		E16B93D7153F84BF00BA052C /* preFlight.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = preFlight.sh; sourceTree = "<group>"; };
+		E16B93F8153F88EE00BA052C /* postFlight.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = postFlight.sh; sourceTree = "<group>"; };
+		E1751F311511580200979D43 /* inventoryUpdate.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = inventoryUpdate.sh; sourceTree = "<group>"; };
+		E1751F3615115B4D00979D43 /* inventory_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inventory_sm.png; sourceTree = "<group>"; };
+		E17F9D7C1475D75C00EAB35D /* NetworkCheck.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = NetworkCheck.icns; sourceTree = "<group>"; };
+		E19A17C1149FAEF00043DE79 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		E19A17C3149FAEF00043DE79 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E19A1C58149FFF560043DE79 /* Plugins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plugins.h; sourceTree = "<group>"; };
+		E19A1C59149FFF560043DE79 /* Plugins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plugins.m; sourceTree = "<group>"; };
+		E19CBD9714861B8100BF8364 /* lrg_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lrg_green.png; sourceTree = "<group>"; };
+		E19CBD9814861B8100BF8364 /* lrg_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lrg_red.png; sourceTree = "<group>"; };
+		E19CBD9914861B8100BF8364 /* lrg_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lrg_yellow.png; sourceTree = "<group>"; };
+		E19CBE541486B8F200BF8364 /* cached_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cached_sm.png; sourceTree = "<group>"; };
+		E19CBE551486B8F200BF8364 /* wireless_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireless_sm.png; sourceTree = "<group>"; };
+		E19CBE561486B8F200BF8364 /* keychain_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keychain_sm.png; sourceTree = "<group>"; };
+		E19CDA3814757FA70095DCE7 /* app.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = app.icns; sourceTree = "<group>"; };
+		E19CDA95147586470095DCE7 /* StatusMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusMessage.h; sourceTree = "<group>"; };
+		E19CDA96147586470095DCE7 /* StatusMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusMessage.m; sourceTree = "<group>"; };
+		E19CDA98147586580095DCE7 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		E19CDA99147586580095DCE7 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		E19CDA9B147586670095DCE7 /* com.github.winnebago.settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = com.github.winnebago.settings.plist; sourceTree = "<group>"; };
+		E19CDB0B14758EC40095DCE7 /* changeKeychainPass.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = changeKeychainPass.sh; sourceTree = "<group>"; };
+		E19CDB0C14758EC40095DCE7 /* checkBind.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = checkBind.sh; sourceTree = "<group>"; };
+		E19CDB0D14758EC40095DCE7 /* checkUser.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = checkUser.sh; sourceTree = "<group>"; };
+		E19CDB0E14758EC40095DCE7 /* common.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = common.sh; sourceTree = "<group>"; };
+		E19CDB0F14758EC40095DCE7 /* Wireless.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = Wireless.sh; sourceTree = "<group>"; };
+		E19CDB1014758EC40095DCE7 /* getUserDetails.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = getUserDetails.sh; sourceTree = "<group>"; };
+		E19CDB1114758EC40095DCE7 /* netCheck.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = netCheck.sh; sourceTree = "<group>"; };
+		E19F67291474B51300B0A72E /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
+		E1A6AC9F15028D8F00802E6C /* companyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = companyLogo.png; sourceTree = "<group>"; };
+		E1A6ACCD15059D6900802E6C /* mail_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail_sm.png; sourceTree = "<group>"; };
+		E1A6ACCF15059E5300802E6C /* logs_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logs_sm.png; sourceTree = "<group>"; };
+		E1A6ACD115059F1A00802E6C /* migrate_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = migrate_sm.png; sourceTree = "<group>"; };
+		E1A6ACD315059FA500802E6C /* tmp_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp_sm.png; sourceTree = "<group>"; };
+		E1A6AD131505BC3600802E6C /* dir_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dir_sm.png; sourceTree = "<group>"; };
+		E1C89621147B22E700472E5D /* mcedit.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = mcedit.py; sourceTree = "<group>"; };
+		E1CD1C7A153F338A006096BD /* checkLocalBind.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = checkLocalBind.sh; sourceTree = "<group>"; };
+		E1DE985914772C9000F77751 /* platformExpert */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = platformExpert; sourceTree = "<group>"; };
+		E1F20853153E73CC00E25495 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		E1F2087B153E7F5E00E25495 /* proceedPanel.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = proceedPanel.html; sourceTree = "<group>"; };
+		E1F20909153E9AA600E25495 /* FullScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenController.h; sourceTree = "<group>"; };
+		E1F2090A153E9AA600E25495 /* FullScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenController.m; sourceTree = "<group>"; };
+		E1F20912153E9BAF00E25495 /* FullScreenWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullScreenWindow.xib; sourceTree = "<group>"; };
+		E1F58B2214EC7D51005B03D5 /* wifiutil.settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = wifiutil.settings.plist; sourceTree = "<group>"; };
+		E1FC91ED1485874D0074C21D /* GlobalStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalStatus.h; sourceTree = "<group>"; };
+		E1FC91EE1485874D0074C21D /* GlobalStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalStatus.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				E12E915014749FDC00791D59 /* Quartz.framework in Frameworks */,
+				E12E915A14749FFA00791D59 /* QuartzCore.framework in Frameworks */,
+				E19F672A1474B51300B0A72E /* Python.framework in Frameworks */,
+				E103C1AE147C509A00155809 /* Security.framework in Frameworks */,
+				E1F20854153E73CC00E25495 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E19CDA98147586580095DCE7 /* Constants.h */,
+				E19CDA99147586580095DCE7 /* Constants.m */,
+				E1FC92A31485B94B0074C21D /* AppDelegate */,
+				E181DD641545FD42000A3606 /* GlobalStatus */,
+				E167DC8214855BC4007FC0F9 /* Summary Panel */,
+				E19CDB0914758D350095DCE7 /* Plugins */,
+				E19CDAA0147586900095DCE7 /* StatusMessage */,
+				E1F2090D153E9AB100E25495 /* FullScreenController */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E12E914F14749FDC00791D59 /* Quartz.framework */,
+				E12E915914749FFA00791D59 /* QuartzCore.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				E19F67291474B51300B0A72E /* Python.framework */,
+				E19A17C1149FAEF00043DE79 /* Quartz.framework */,
+				E19A17C3149FAEF00043DE79 /* QuartzCore.framework */,
+				E1F20853153E73CC00E25495 /* WebKit.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* Winnebago.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* PasswordUtility */ = {
+			isa = PBXGroup;
+			children = (
+				E152451814FBD68100F7E693 /* .winnebago.conf */,
+				E19CDA9B147586670095DCE7 /* com.github.winnebago.settings.plist */,
+				E181DD681545FE3F000A3606 /* proceedPanel */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				E19CDB1A14758ECA0095DCE7 /* scriptPlugins */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = PasswordUtility;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				256AC3F00F4B6AF500CF3369 /* Winnebago_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E1FC9187148570FA0074C21D /* icons */,
+				8D1107310486CEB800E47090 /* Winnebago-Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+				E103C1AD147C509A00155809 /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E11FF07114844D2200B335CD /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E17F9E251475E61300EAB35D /* checkScripts */,
+				E152455214FD7EDA00F7E693 /* addToDock.sh */,
+				E103C41B147C777A00155809 /* PasswordUtilityHelper */,
+				E1DE985914772C9000F77751 /* platformExpert */,
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+		E167DC8214855BC4007FC0F9 /* Summary Panel */ = {
+			isa = PBXGroup;
+			children = (
+				E19CBE5A1486B8F800BF8364 /* Script Images */,
+				E19CBD9614861B8100BF8364 /* Summary Status Icons */,
+				E1FC92A41485B95F0074C21D /* StatusIconCell */,
+				E1FC92A51485B96A0074C21D /* SummaryPanelController */,
+			);
+			name = "Summary Panel";
+			sourceTree = "<group>";
+		};
+		E17F9E251475E61300EAB35D /* checkScripts */ = {
+			isa = PBXGroup;
+			children = (
+				E148780B14FE5F7300B23C54 /* com.github.winnebago.remove.plist */,
+				E1CD1C7A153F338A006096BD /* checkLocalBind.sh */,
+				E14336D81541F2950038C1A7 /* checkBatt.sh */,
+				E19CDB1014758EC40095DCE7 /* getUserDetails.sh */,
+				E19CDB0C14758EC40095DCE7 /* checkBind.sh */,
+				E19CDB0D14758EC40095DCE7 /* checkUser.sh */,
+				E19CDB1114758EC40095DCE7 /* netCheck.sh */,
+			);
+			name = checkScripts;
+			sourceTree = "<group>";
+		};
+		E181DD641545FD42000A3606 /* GlobalStatus */ = {
+			isa = PBXGroup;
+			children = (
+				E1FC91ED1485874D0074C21D /* GlobalStatus.h */,
+				E1FC91EE1485874D0074C21D /* GlobalStatus.m */,
+			);
+			name = GlobalStatus;
+			sourceTree = "<group>";
+		};
+		E181DD681545FE3F000A3606 /* proceedPanel */ = {
+			isa = PBXGroup;
+			children = (
+				E1A6AC9F15028D8F00802E6C /* companyLogo.png */,
+				E1F2087B153E7F5E00E25495 /* proceedPanel.html */,
+			);
+			name = proceedPanel;
+			sourceTree = "<group>";
+		};
+		E19CBD9614861B8100BF8364 /* Summary Status Icons */ = {
+			isa = PBXGroup;
+			children = (
+				E19CBD9714861B8100BF8364 /* lrg_green.png */,
+				E19CBD9814861B8100BF8364 /* lrg_red.png */,
+				E19CBD9914861B8100BF8364 /* lrg_yellow.png */,
+			);
+			name = "Summary Status Icons";
+			sourceTree = "<group>";
+		};
+		E19CBE5A1486B8F800BF8364 /* Script Images */ = {
+			isa = PBXGroup;
+			children = (
+				E16B93C6153F84B300BA052C /* preflight_sm.png */,
+				E1A6AD131505BC3600802E6C /* dir_sm.png */,
+				E1751F3615115B4D00979D43 /* inventory_sm.png */,
+				E1A6ACD315059FA500802E6C /* tmp_sm.png */,
+				E1A6ACD115059F1A00802E6C /* migrate_sm.png */,
+				E1A6ACCF15059E5300802E6C /* logs_sm.png */,
+				E1A6ACCD15059D6900802E6C /* mail_sm.png */,
+				E167DCBF1485694B007FC0F9 /* generic_sm.png */,
+				E19CBE541486B8F200BF8364 /* cached_sm.png */,
+				E19CBE551486B8F200BF8364 /* wireless_sm.png */,
+				E19CBE561486B8F200BF8364 /* keychain_sm.png */,
+			);
+			name = "Script Images";
+			sourceTree = "<group>";
+		};
+		E19CDAA0147586900095DCE7 /* StatusMessage */ = {
+			isa = PBXGroup;
+			children = (
+				E19CDA95147586470095DCE7 /* StatusMessage.h */,
+				E19CDA96147586470095DCE7 /* StatusMessage.m */,
+			);
+			name = StatusMessage;
+			sourceTree = "<group>";
+		};
+		E19CDB0914758D350095DCE7 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				E19A1C58149FFF560043DE79 /* Plugins.h */,
+				E19A1C59149FFF560043DE79 /* Plugins.m */,
+			);
+			name = Plugins;
+			sourceTree = "<group>";
+		};
+		E19CDB1A14758ECA0095DCE7 /* scriptPlugins */ = {
+			isa = PBXGroup;
+			children = (
+				E19CDB0E14758EC40095DCE7 /* common.sh */,
+				E16B93D7153F84BF00BA052C /* preFlight.sh */,
+				E1751F311511580200979D43 /* inventoryUpdate.sh */,
+				E152456214FD7FBD00F7E693 /* sendEmail.sh */,
+				E152456014FD7FB800F7E693 /* sendEmail.pl */,
+				E152455E14FD7F6E00F7E693 /* revertChanges.sh */,
+				E152455C14FD7F6200F7E693 /* removeDockIcon.sh */,
+				E152455A14FD7F4700F7E693 /* migrateAccount.sh */,
+				E152455814FD7F3300F7E693 /* createMacTempUser.sh */,
+				E152455614FD7F2D00F7E693 /* copyLogs.sh */,
+				E15F42EA153CCD2F0073F718 /* fixPerms.sh */,
+				E152455414FD7F0300F7E693 /* cacheAD.sh */,
+				E152450714FBD5D700F7E693 /* dsconfig.sh */,
+				E19CDB0B14758EC40095DCE7 /* changeKeychainPass.sh */,
+				E16B93F8153F88EE00BA052C /* postFlight.sh */,
+				E11FF07114844D2200B335CD /* helpers */,
+				E1DE961C1476CC4600F77751 /* wireless */,
+			);
+			name = scriptPlugins;
+			sourceTree = "<group>";
+		};
+		E1DE961C1476CC4600F77751 /* wireless */ = {
+			isa = PBXGroup;
+			children = (
+				E1C89621147B22E700472E5D /* mcedit.py */,
+				E19CDB0F14758EC40095DCE7 /* Wireless.sh */,
+				E13BE7C414EF34520016CAB2 /* kcutil */,
+				E1F58B2214EC7D51005B03D5 /* wifiutil.settings.plist */,
+				E13BE3F114EECA760016CAB2 /* wifiutil.py */,
+			);
+			name = wireless;
+			sourceTree = "<group>";
+		};
+		E1F2090D153E9AB100E25495 /* FullScreenController */ = {
+			isa = PBXGroup;
+			children = (
+				E1F20912153E9BAF00E25495 /* FullScreenWindow.xib */,
+				E1F20909153E9AA600E25495 /* FullScreenController.h */,
+				E1F2090A153E9AA600E25495 /* FullScreenController.m */,
+			);
+			name = FullScreenController;
+			sourceTree = "<group>";
+		};
+		E1FC9187148570FA0074C21D /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				E19CDA3814757FA70095DCE7 /* app.icns */,
+				E17F9D7C1475D75C00EAB35D /* NetworkCheck.icns */,
+				E1200BDD1475BE69001A41A0 /* ProblemReporter.icns */,
+			);
+			name = icons;
+			sourceTree = "<group>";
+		};
+		E1FC92A31485B94B0074C21D /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				256AC3D80F4B6AC300CF3369 /* PasswordUtilityAppDelegate.h */,
+				256AC3D90F4B6AC300CF3369 /* PasswordUtilityAppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		E1FC92A41485B95F0074C21D /* StatusIconCell */ = {
+			isa = PBXGroup;
+			children = (
+				E167DC8314855BC4007FC0F9 /* StatusIconCell.h */,
+				E167DC8414855BC4007FC0F9 /* StatusIconCell.m */,
+			);
+			name = StatusIconCell;
+			sourceTree = "<group>";
+		};
+		E1FC92A51485B96A0074C21D /* SummaryPanelController */ = {
+			isa = PBXGroup;
+			children = (
+				E167DC8514855BC4007FC0F9 /* SummaryWindowController.h */,
+				E167DC8614855BC4007FC0F9 /* SummaryWindowController.m */,
+			);
+			name = SummaryPanelController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* Winnebago */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Winnebago" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Winnebago;
+			productInstallPath = "$(HOME)/Applications";
+			productName = PasswordUtility;
+			productReference = 8D1107320486CEB800E47090 /* Winnebago.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Winnebago" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* PasswordUtility */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* Winnebago */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				E19CDA3914757FA70095DCE7 /* app.icns in Resources */,
+				E19CDA9C147586670095DCE7 /* com.github.winnebago.settings.plist in Resources */,
+				E19CDB1314758EC40095DCE7 /* changeKeychainPass.sh in Resources */,
+				E19CDB1414758EC40095DCE7 /* checkBind.sh in Resources */,
+				E19CDB1514758EC40095DCE7 /* checkUser.sh in Resources */,
+				E19CDB1614758EC40095DCE7 /* common.sh in Resources */,
+				E19CDB1714758EC40095DCE7 /* Wireless.sh in Resources */,
+				E19CDB1814758EC40095DCE7 /* getUserDetails.sh in Resources */,
+				E19CDB1914758EC40095DCE7 /* netCheck.sh in Resources */,
+				E1200BDE1475BE69001A41A0 /* ProblemReporter.icns in Resources */,
+				E17F9D7D1475D75C00EAB35D /* NetworkCheck.icns in Resources */,
+				E1DE985A14772C9000F77751 /* platformExpert in Resources */,
+				E1C89622147B22E700472E5D /* mcedit.py in Resources */,
+				E103C41C147C777A00155809 /* PasswordUtilityHelper in Resources */,
+				E167DCC01485694B007FC0F9 /* generic_sm.png in Resources */,
+				E19CBD9A14861B8100BF8364 /* lrg_green.png in Resources */,
+				E19CBD9B14861B8100BF8364 /* lrg_red.png in Resources */,
+				E19CBD9C14861B8100BF8364 /* lrg_yellow.png in Resources */,
+				E19CBE571486B8F200BF8364 /* cached_sm.png in Resources */,
+				E19CBE581486B8F200BF8364 /* wireless_sm.png in Resources */,
+				E19CBE591486B8F200BF8364 /* keychain_sm.png in Resources */,
+				E1F58B2314EC7D51005B03D5 /* wifiutil.settings.plist in Resources */,
+				E13BE3F214EECA760016CAB2 /* wifiutil.py in Resources */,
+				E13BE7C514EF34520016CAB2 /* kcutil in Resources */,
+				E152450814FBD5D700F7E693 /* dsconfig.sh in Resources */,
+				E152451914FBD68100F7E693 /* .winnebago.conf in Resources */,
+				E152455314FD7EDA00F7E693 /* addToDock.sh in Resources */,
+				E152455514FD7F0300F7E693 /* cacheAD.sh in Resources */,
+				E152455714FD7F2D00F7E693 /* copyLogs.sh in Resources */,
+				E152455914FD7F3300F7E693 /* createMacTempUser.sh in Resources */,
+				E152455B14FD7F4700F7E693 /* migrateAccount.sh in Resources */,
+				E152455D14FD7F6200F7E693 /* removeDockIcon.sh in Resources */,
+				E152455F14FD7F6E00F7E693 /* revertChanges.sh in Resources */,
+				E152456114FD7FB800F7E693 /* sendEmail.pl in Resources */,
+				E152456314FD7FBD00F7E693 /* sendEmail.sh in Resources */,
+				E148780C14FE5F7300B23C54 /* com.github.winnebago.remove.plist in Resources */,
+				E1A6ACA015028D8F00802E6C /* companyLogo.png in Resources */,
+				E1A6ACCE15059D6900802E6C /* mail_sm.png in Resources */,
+				E1A6ACD015059E5300802E6C /* logs_sm.png in Resources */,
+				E1A6ACD215059F1A00802E6C /* migrate_sm.png in Resources */,
+				E1A6ACD415059FA500802E6C /* tmp_sm.png in Resources */,
+				E1A6AD141505BC3600802E6C /* dir_sm.png in Resources */,
+				E1751F321511580200979D43 /* inventoryUpdate.sh in Resources */,
+				E1751F3715115B4D00979D43 /* inventory_sm.png in Resources */,
+				E15F42EB153CCD2F0073F718 /* fixPerms.sh in Resources */,
+				E1F2087C153E7F5E00E25495 /* proceedPanel.html in Resources */,
+				E1F20913153E9BAF00E25495 /* FullScreenWindow.xib in Resources */,
+				E1CD1C7B153F338A006096BD /* checkLocalBind.sh in Resources */,
+				E16B93C7153F84B300BA052C /* preflight_sm.png in Resources */,
+				E16B93D8153F84BF00BA052C /* preFlight.sh in Resources */,
+				E16B93F9153F88EE00BA052C /* postFlight.sh in Resources */,
+				E14336D91541F2950038C1A7 /* checkBatt.sh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				256AC3DA0F4B6AC300CF3369 /* PasswordUtilityAppDelegate.m in Sources */,
+				E19CDA97147586470095DCE7 /* StatusMessage.m in Sources */,
+				E19CDA9A147586580095DCE7 /* Constants.m in Sources */,
+				E167DC8814855BC4007FC0F9 /* StatusIconCell.m in Sources */,
+				E167DC8914855BC4007FC0F9 /* SummaryWindowController.m in Sources */,
+				E1FC91EF1485874D0074C21D /* GlobalStatus.m in Sources */,
+				E19A1C5A149FFF560043DE79 /* Plugins.m in Sources */,
+				E1F2090B153E9AA600E25495 /* FullScreenController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDD58150DA1D0A300B32029 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Winnebago_Prefix.pch;
+				INFOPLIST_FILE = "Winnebago-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Winnebago;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Winnebago_Prefix.pch;
+				INFOPLIST_FILE = "Winnebago-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Winnebago;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Winnebago" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Winnebago" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

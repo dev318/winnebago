@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>KeepAlive</key>
+	<false/>
+	<key>Label</key>
+	<string>com.github.winnebago.migrateReport</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/local/bin/migrateReport.sh</string>
+	</array>
+	<key>QueueDirectories</key>
+	<array/>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>17</integer>
+		<key>Minute</key>
+		<integer>0</integer>
+	</dict>
+	<key>WatchPaths</key>
+	<array/>
+</dict>
+</plist>

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>debugEnabled</key>
+	<false/>
+	<key>showProceedDialog</key>
+	<true/>
+	<key>checkNetwork</key>
+	<true/>
+	<key>helper</key>
+	<false/>
+	<key>requiredDays</key>
+	<integer>5</integer>
+	<key>companyName</key>
+	<string>Nike</string>
+	<key>vpnToolPath</key>
+	<string>/Applications/Cisco/Cisco AnyConnect Secure Mobility Client.app</string>
+	<key>vpnBundleID</key>
+	<string>com.cisco.vpn</string>
+	<key>globalStatusInterval</key>
+	<string>10</string>
+	<key>installPhaseTxt</key>
+	<string>/private/tmp/com.github.winnebago.pleasewait.phase</string>
+	<key>installProgressFile</key>
+	<string>/private/tmp/com.github.winnebago.pleasewait.installprogress</string>
+	<key>installProgressTxt</key>
+	<string>/private/tmp/com.github.winnebago.pleasewait.progress</string>
+	<key>saveFilePath</key>
+	<string>/Library/Application Support/Winnebago/com.github.winnebago.ad.plist</string>
+	<key>defFilePath</key>
+	<string>/Library/Caches/.runADUtility</string>
+	<key>scriptPlugins</key>
+	<dict>
+		<key>mainRunLoopScripts</key>
+		<dict>
+			<key>com.nike.adutility</key>
+			<dict>
+				<key>headerTitle</key>
+				<string>Winnebago Scripts</string>
+				<key>itemScripts</key>
+				<array>
+					<dict>
+						<key>exitCodes</key>
+						<dict>
+							<key>0</key>
+							<dict/>
+						</dict>
+						<key>scriptImage</key>
+						<string>preflight_sm</string>
+						<key>scriptEndTitle</key>
+						<string>Preflight Setup</string>
+						<key>scriptFailedTitle</key>
+						<string>Preflight Setup Failed</string>
+						<key>scriptFailedDescription</key>
+						<string>Unable to complete preflight</string>
+						<key>scriptWarningTitle</key>
+						<string>Preflight Setup (Warning)</string>
+						<key>scriptWarningDescription</key>
+						<string>preflight completed with minor warnings</string>
+						<key>scriptEndDescription</key>
+						<string>preflight setup completed</string>
+						<key>scriptTitle</key>
+						<string>Preflight Setup</string>
+						<key>scriptDescription</key>
+						<string>preflight setup completed</string>
+						<key>scriptPath</key>
+						<string>preFlight</string>
+						<key>scriptExtention</key>
+						<string>sh</string>
+						<key>scriptIsInBundle</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>exitCodes</key>
+						<dict>
+							<key>0</key>
+							<dict/>
+						</dict>
+						<key>scriptImage</key>
+						<string>tmp_sm</string>
+						<key>scriptEndTitle</key>
+						<string>Created Temp User</string>
+						<key>scriptFailedTitle</key>
+						<string>Created Temp User Failed</string>
+						<key>scriptFailedDescription</key>
+						<string>Unable to Create Temp User</string>
+						<key>scriptWarningTitle</key>
+						<string>Create Temp User (Warning)</string>
+						<key>scriptWarningDescription</key>
+						<string>The account was migrated minor warnings</string>
+						<key>scriptEndDescription</key>
+						<string>The temp user was created</string>
+						<key>scriptTitle</key>
+						<string>Created Temp User</string>
+						<key>scriptDescription</key>
+						<string>The temp user was created</string>
+						<key>scriptPath</key>
+						<string>createMacTempUser</string>
+						<key>scriptExtention</key>
+						<string>sh</string>
+						<key>scriptIsInBundle</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>exitCodes</key>
+						<dict>
+							<key>0</key>
+							<dict/>
+						</dict>
+						<key>scriptImage</key>
+						<string>keychain_sm</string>
+						<key>scriptFailedTitle</key>
+						<string>Keychain Password</string>
+						<key>scriptFailedDescription</key>
+						<string>Failed to update Keychain Password, code (%@)</string>
+						<key>scriptWarningTitle</key>
+						<string>Keychain Password</string>
+						<key>scriptWarningDescription</key>
+						<string>A new keychain will be created</string>
+						<key>scriptEndTitle</key>
+						<string>Keychain Password</string>
+						<key>scriptEndDescription</key>
+						<string>Successfully updated keychain password</string>
+						<key>scriptTitle</key>
+						<string>Keychain Password</string>
+						<key>scriptDescription</key>
+						<string>Successfully updated keychain password</string>
+						<key>scriptPath</key>
+						<string>changeKeychainPass</string>
+						<key>scriptExtention</key>
+						<string>sh</string>
+						<key>scriptIsInBundle</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>exitCodes</key>
+						<dict>
+							<key>0</key>
+							<dict/>
+						</dict>
+						<key>scriptImage</key>
+						<string>migrate_sm</string>
+						<key>scriptEndTitle</key>
+						<string>Migrated Account</string>
+						<key>scriptFailedTitle</key>
+						<string>Migrated Account Failed</string>
+						<key>scriptFailedDescription</key>
+						<string>Unable to Migrate Account</string>
+						<key>scriptWarningTitle</key>
+						<string>Migrated Account (Warning) </string>
+						<key>scriptWarningDescription</key>
+						<string>The account was migrated minor warnings</string>
+						<key>scriptEndDescription</key>
+						<string>Account Migrated successfully</string>
+						<key>scriptTitle</key>
+						<string>Migrated Account</string>
+						<key>scriptDescription</key>
+						<string>Account Migrated successfully</string>
+						<key>scriptPath</key>
+						<string>migrateAccount</string>
+						<key>scriptExtention</key>
+						<string>sh</string>
+						<key>scriptIsInBundle</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>exitCodes</key>
+						<dict>
+							<key>0</key>
+							<dict/>
+						</dict>
+						<key>scriptImage</key>
+						<string>dir_sm</string>
+						<key>scriptEndTitle</key>
+						<string>Active Directory Binding</string>
+						<key>scriptFailedTitle</key>
+						<string>Active Directory Binding</string>
+						<key>scriptFailedDescription</key>
+						<string>Error running script</string>
+						<key>scriptWarningTitle</key>
+						<string>Active Directory Binding (Warning)</string>
+						<key>scriptWarningDescription</key>
+						<string>Binding was completed with minor errors</string>
+						<key>scriptEndDescription</key>
+						<string>Your computer was added to DirectoryService</string>
+						<key>scriptTitle</key>
+						<string>Active Directory Binding (Warning)</string>
+						<key>scriptDescription</key>
+						<string>Your computer was added to DirectoryService</string>
+						<key>scriptPath</key>
+						<string>dsconfig</string>
+						<key>scriptExtention</key>
+						<string>sh</string>
+						<key>scriptIsInBundle</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>exitCodes</key>
+						<dict>
+							<key>0</key>
+							<dict/>
+						</dict>
+						<key>scriptImage</key>
+						<string>cached_sm</string>
+						<key>scriptEndTitle</key>
+						<string>User Login Cached</string>
+						<key>scriptFailedTitle</key>
+						<string>User Login Cached</string>
+						<key>scriptFailedDescription</key>
+						<string>Error running script</string>
+						<key>scriptWarningTitle</key>
+						<string>User Login Cached (Warning)</string>
+						<key>scriptWarningDescription</key>
+						<string>Your user credentials were cached (warning)</string>
+						<key>scriptEndDescription</key>
+						<string>Your user credentials were cached</string>
+						<key>scriptTitle</key>
+						<string>User Login Cached</string>
+						<key>scriptDescription</key>
+						<string>Your user credentials were cached</string>
+						<key>scriptPath</key>
+						<string>cacheAD</string>
+						<key>scriptExtention</key>
+						<string>sh</string>
+						<key>scriptIsInBundle</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>exitCodes</key>
+						<dict>
+							<key>0</key>
+							<dict/>
+						</dict>
+						<key>scriptImage</key>
+						<string>generic_sm</string>
+						<key>scriptEndTitle</key>
+						<string>Fix Home Permissions</string>
+						<key>scriptFailedTitle</key>
+						<string>Fix Home Permissions</string>
+						<key>scriptFailedDescription</key>
+						<string>Error running script</string>
+						<key>scriptWarningTitle</key>
+						<string>Fix Home Permissions (Warning)</string>
+						<key>scriptWarningDescription</key>
+						<string>Updating your permissions on files folder</string>
+						<key>scriptEndDescription</key>
+						<string>Updating your permissions on files folder</string>
+						<key>scriptTitle</key>
+						<string>Fix Home Permissions</string>
+						<key>scriptDescription</key>
+						<string>Updating your permissions on files folder</string>
+						<key>scriptPath</key>
+						<string>fixPerms</string>
+						<key>scriptExtention</key>
+						<string>sh</string>
+						<key>scriptIsInBundle</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>exitCodes</key>
+						<dict>
+							<key>0</key>
+							<dict/>
+						</dict>
+						<key>scriptImage</key>
+						<string>logs_sm</string>
+						<key>scriptEndTitle</key>
+						<string>Copy Logs</string>
+						<key>scriptFailedTitle</key>
+						<string>Copy Logs</string>
+						<key>scriptFailedDescription</key>
+						<string>Unable to copy logs</string>
+						<key>scriptWarningTitle</key>
+						<string>Copy Logs (Warning)</string>
+						<key>scriptWarningDescription</key>
+						<string>The logs were copied with minor errors</string>
+						<key>scriptEndDescription</key>
+						<string>The logs were copied</string>
+						<key>scriptTitle</key>
+						<string>Copy Logs</string>
+						<key>scriptDescription</key>
+						<string>The logs were copied</string>
+						<key>scriptPath</key>
+						<string>copyLogs</string>
+						<key>scriptExtention</key>
+						<string>sh</string>
+						<key>scriptIsInBundle</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>exitCodes</key>
+						<dict>
+							<key>0</key>
+							<dict/>
+						</dict>
+						<key>scriptImage</key>
+						<string>inventory_sm</string>
+						<key>scriptEndTitle</key>
+						<string>Updating Inventory</string>
+						<key>scriptFailedTitle</key>
+						<string>Updating Inventory</string>
+						<key>scriptFailedDescription</key>
+						<string>Unable to Update Inventory</string>
+						<key>scriptWarningTitle</key>
+						<string>Update Inventory (Warning)</string>
+						<key>scriptWarningDescription</key>
+						<string>An issue was deteced updating inventory</string>
+						<key>scriptEndDescription</key>
+						<string>Inventory updating completed</string>
+						<key>scriptTitle</key>
+						<string>Updating Inventory</string>
+						<key>scriptDescription</key>
+						<string>Inventory updating completed</string>
+						<key>scriptPath</key>
+						<string>inventoryUpdate</string>
+						<key>scriptExtention</key>
+						<string>sh</string>
+						<key>scriptIsInBundle</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>exitCodes</key>
+						<dict>
+							<key>0</key>
+							<dict/>
+						</dict>
+						<key>scriptImage</key>
+						<string>mail_sm</string>
+						<key>scriptEndTitle</key>
+						<string>Send IT Email</string>
+						<key>scriptFailedTitle</key>
+						<string>Send IT Email</string>
+						<key>scriptFailedDescription</key>
+						<string>Unable to copy logs</string>
+						<key>scriptWarningTitle</key>
+						<string>Send IT Email (Warning)</string>
+						<key>scriptWarningDescription</key>
+						<string>An email was sent with minor warnings</string>
+						<key>scriptEndDescription</key>
+						<string>An email was sent with logs to IT dept</string>
+						<key>scriptTitle</key>
+						<string>Send IT Email</string>
+						<key>scriptDescription</key>
+						<string>An email was sent with logs to IT dept</string>
+						<key>scriptPath</key>
+						<string>sendEmail</string>
+						<key>scriptExtention</key>
+						<string>sh</string>
+						<key>scriptIsInBundle</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>exitCodes</key>
+						<dict>
+							<key>0</key>
+							<dict/>
+						</dict>
+						<key>scriptImage</key>
+						<string>preflight_sm</string>
+						<key>scriptEndTitle</key>
+						<string>Postflight Setup</string>
+						<key>scriptFailedTitle</key>
+						<string>Postflight Setup Failed</string>
+						<key>scriptFailedDescription</key>
+						<string>Unable to complete preflight</string>
+						<key>scriptWarningTitle</key>
+						<string>Postflight Setup (Warning)</string>
+						<key>scriptWarningDescription</key>
+						<string>postflight completed with minor warnings</string>
+						<key>scriptEndDescription</key>
+						<string>postflight setup completed</string>
+						<key>scriptTitle</key>
+						<string>Postflight Setup</string>
+						<key>scriptDescription</key>
+						<string>postflight setup completed</string>
+						<key>scriptPath</key>
+						<string>postFlight</string>
+						<key>scriptExtention</key>
+						<string>sh</string>
+						<key>scriptIsInBundle</key>
+						<true/>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</dict>
+	<key>processCompleteText</key>
+	<string>Congratulations! From this point on you will log into your Mac using your Winnebago User
+ID and password. Once you have rebooted, no further action on your part should be required.
+Below is a summary of the steps taken during this process and their results.</string>
+	<key>networkCheckText</key>
+	<string>To continue, you MUST first be connected to the Winnebago network.
+Ensure that you are connected to AirFlight , AnyConnect, or plug into the Nike network directly via a network cable.</string>
+	<key>revertText</key>
+	<string>Your Mac encountered an issue. It is recommended that when prompted you try to run this tool again. If you continue to have issues or require assistance, contact 2525.
+￼
+Note: All changes have been reversed, but this tool will run again in 3 hours. You will log into your Mac using your original local user ID and password until the tool successfully completes.</string>
+	<key>failureText</key>
+	<string>Your Mac encountered a critical error and was unable to recover. Please contact 0000 for technical assistance.
+Note: All of your data should be safe. Technical assistance may be required in order to allow you to login to your Mac.</string>
+</dict>
+</plist>

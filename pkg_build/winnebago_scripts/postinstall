@@ -1,0 +1,23 @@
+#!/bin/bash
+declare -x chown="/usr/sbin/chown"
+declare -x chmod="/bin/chmod"
+declare -x launchctl="/bin/launchctl"
+
+declare -x PLIST_ID="com.github.winnebago"
+declare -x PLIST_PATH="/Library/LaunchDaemons/${PLIST_ID:?}.plist"
+
+if [ ! -f "${PLIST_PATH:?}" ] ; then
+	echo "PLIST is missing at path: $PLIST_PATH"
+	exit 1
+fi
+
+# Secure the install items ( good measure )
+$chown 0:0 \
+        "$PLIST_PATH" 	
+$chmod 755 \
+        "$PLIST_PATH"  
+
+# Load the launchd plist
+if [ -f "$PLIST_PATH" ] ; then
+	$launchctl load -w "$PLIST_PATH"
+fi
