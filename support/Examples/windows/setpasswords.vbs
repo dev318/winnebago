@@ -11,7 +11,7 @@ set objOU = GetObject("LDAP://" & strContainer )
 For each objUser in objOU
 If objUser.class="user" then
 WScript.Echo "Processing: " & objUser.name
-objUser.SetPassword objUser.name & "1234"
+objUser.SetPassword objUser.name & "sharedsecret"
 objUser.SetInfo
 End If
 Next

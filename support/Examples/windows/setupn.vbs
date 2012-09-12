@@ -11,7 +11,7 @@ set objOU = GetObject("LDAP://" & strContainer )
 For each objUser in objOU
 If objUser.class="user" then
 WScript.Echo "Processing: " & objUser.cn
-objUser.Put "userPrincipalName", objUser.sAMAccountName & "@ad.yelpcorp.com"
+objUser.Put "userPrincipalName", objUser.sAMAccountName & "@example.com"
 objUser.SetInfo
 End If
 Next
