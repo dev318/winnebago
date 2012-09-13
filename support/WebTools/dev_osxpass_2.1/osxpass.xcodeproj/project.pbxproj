@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2DD693D005DB15F1005A0DAE /* stringops.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD693CF05DB15F1005A0DAE /* stringops.h */; };
+		2DD693D905DB15F1005A0DAE /* passwd.c in Sources */ = {isa = PBXBuildFile; fileRef = 2DD693D805DB15F1005A0DAE /* passwd.c */; settings = {ATTRIBUTES = (); }; };
+		2DD693DB05DB15F1005A0DAE /* stringops.c in Sources */ = {isa = PBXBuildFile; fileRef = 2DD693DA05DB15F1005A0DAE /* stringops.c */; settings = {ATTRIBUTES = (); }; };
+		2DD693E405DB1630005A0DAE /* ds_passwd.c in Sources */ = {isa = PBXBuildFile; fileRef = 2DD693E305DB1630005A0DAE /* ds_passwd.c */; };
+		2DD693E605DB183F005A0DAE /* DirectoryService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD693E505DB183F005A0DAE /* DirectoryService.framework */; };
+		2DD6943C05DDD753005A0DAE /* create_page.c in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6943B05DDD753005A0DAE /* create_page.c */; };
+		E1CE2A2E12FA43E9004496CB /* stringops.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD693CF05DB15F1005A0DAE /* stringops.h */; };
+		E1CE2A3012FA43E9004496CB /* passwd.c in Sources */ = {isa = PBXBuildFile; fileRef = 2DD693D805DB15F1005A0DAE /* passwd.c */; settings = {ATTRIBUTES = (); }; };
+		E1CE2A3112FA43E9004496CB /* stringops.c in Sources */ = {isa = PBXBuildFile; fileRef = 2DD693DA05DB15F1005A0DAE /* stringops.c */; settings = {ATTRIBUTES = (); }; };
+		E1CE2A3212FA43E9004496CB /* ds_passwd.c in Sources */ = {isa = PBXBuildFile; fileRef = 2DD693E305DB1630005A0DAE /* ds_passwd.c */; };
+		E1CE2A3312FA43E9004496CB /* create_page.c in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6943B05DDD753005A0DAE /* create_page.c */; };
+		E1CE2A3512FA43E9004496CB /* DirectoryService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD693E505DB183F005A0DAE /* DirectoryService.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2DD693CB05DB15F1005A0DAE /* index.cgi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = index.cgi; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DD693CF05DB15F1005A0DAE /* stringops.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = stringops.h; sourceTree = "<group>"; };
+		2DD693D805DB15F1005A0DAE /* passwd.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = passwd.c; sourceTree = "<group>"; };
+		2DD693DA05DB15F1005A0DAE /* stringops.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = stringops.c; sourceTree = "<group>"; };
+		2DD693E005DB15F1005A0DAE /* passwd.1 */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.man; path = passwd.1; sourceTree = "<group>"; };
+		2DD693E305DB1630005A0DAE /* ds_passwd.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = ds_passwd.c; sourceTree = "<group>"; };
+		2DD693E505DB183F005A0DAE /* DirectoryService.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DirectoryService.framework; path = /System/Library/Frameworks/DirectoryService.framework; sourceTree = "<absolute>"; };
+		2DD6943B05DDD753005A0DAE /* create_page.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = create_page.c; sourceTree = "<group>"; };
+		E1CE2A3B12FA43E9004496CB /* index.cgi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = index.cgi; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2DD693C805DB15F1005A0DAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DD693E605DB183F005A0DAE /* DirectoryService.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1CE2A3412FA43E9004496CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1CE2A3512FA43E9004496CB /* DirectoryService.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2DD693C205DB15F0005A0DAE /* passwd */ = {
+			isa = PBXGroup;
+			children = (
+				2DD693CE05DB15F1005A0DAE /* Headers */,
+				2DD693D105DB15F1005A0DAE /* Other Sources */,
+				2DD693DC05DB15F1005A0DAE /* Supporting Files */,
+				2DD693CC05DB15F1005A0DAE /* Products */,
+			);
+			name = passwd;
+			sourceTree = "<group>";
+		};
+		2DD693CC05DB15F1005A0DAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2DD693CB05DB15F1005A0DAE /* index.cgi */,
+				E1CE2A3B12FA43E9004496CB /* index.cgi */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2DD693CE05DB15F1005A0DAE /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				2DD693CF05DB15F1005A0DAE /* stringops.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		2DD693D105DB15F1005A0DAE /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2DD693D805DB15F1005A0DAE /* passwd.c */,
+				2DD693E305DB1630005A0DAE /* ds_passwd.c */,
+				2DD6943B05DDD753005A0DAE /* create_page.c */,
+				2DD693E505DB183F005A0DAE /* DirectoryService.framework */,
+				2DD693DA05DB15F1005A0DAE /* stringops.c */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		2DD693DC05DB15F1005A0DAE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2DD693E005DB15F1005A0DAE /* passwd.1 */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2DD693C605DB15F1005A0DAE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DD693D005DB15F1005A0DAE /* stringops.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1CE2A2D12FA43E9004496CB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1CE2A2E12FA43E9004496CB /* stringops.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E1CE2A2C12FA43E9004496CB /* passwd (Tool) (Upgraded) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1CE2A3712FA43E9004496CB /* Build configuration list for PBXNativeTarget "passwd (Tool) (Upgraded)" */;
+			buildPhases = (
+				E1CE2A2D12FA43E9004496CB /* Headers */,
+				E1CE2A2F12FA43E9004496CB /* Sources */,
+				E1CE2A3412FA43E9004496CB /* Frameworks */,
+				E1CE2A3612FA43E9004496CB /* Rez */,
+			);
+			buildRules = (
+			);
+			comments = "CGI written in C to Change Password on OS X Server - Version 2.0";
+			dependencies = (
+			);
+			name = "passwd (Tool) (Upgraded)";
+			productInstallPath = /usr/bin;
+			productName = "passwd (Tool)";
+			productReference = E1CE2A3B12FA43E9004496CB /* index.cgi */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2DD693E205DB15F1005A0DAE /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = E1CE2A2612FA43C3004496CB /* Build configuration list for PBXProject "osxpass" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 2DD693C205DB15F0005A0DAE /* passwd */;
+			productRefGroup = 2DD693CC05DB15F1005A0DAE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1CE2A2C12FA43E9004496CB /* passwd (Tool) (Upgraded) */,
+				2DD693CA05DB15F1005A0DAE /* passwd (Tool) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXRezBuildPhase section */
+		2DD693C905DB15F1005A0DAE /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1CE2A3612FA43E9004496CB /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2DD693C705DB15F1005A0DAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DD693D905DB15F1005A0DAE /* passwd.c in Sources */,
+				2DD693DB05DB15F1005A0DAE /* stringops.c in Sources */,
+				2DD693E405DB1630005A0DAE /* ds_passwd.c in Sources */,
+				2DD6943C05DDD753005A0DAE /* create_page.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1CE2A2F12FA43E9004496CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1CE2A3012FA43E9004496CB /* passwd.c in Sources */,
+				E1CE2A3112FA43E9004496CB /* stringops.c in Sources */,
+				E1CE2A3212FA43E9004496CB /* ds_passwd.c in Sources */,
+				E1CE2A3312FA43E9004496CB /* create_page.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXToolTarget section */
+		2DD693CA05DB15F1005A0DAE /* passwd (Tool) */ = {
+			isa = PBXToolTarget;
+			buildConfigurationList = E1CE2A2712FA43C3004496CB /* Build configuration list for PBXToolTarget "passwd (Tool)" */;
+			buildPhases = (
+				2DD693C605DB15F1005A0DAE /* Headers */,
+				2DD693C705DB15F1005A0DAE /* Sources */,
+				2DD693C805DB15F1005A0DAE /* Frameworks */,
+				2DD693C905DB15F1005A0DAE /* Rez */,
+			);
+			comments = "CGI written in C to Change Password on OS X Server - Version 2.0";
+			dependencies = (
+			);
+			name = "passwd (Tool)";
+			productInstallPath = /usr/bin;
+			productName = "passwd (Tool)";
+			productReference = 2DD693CB05DB15F1005A0DAE /* index.cgi */;
+		};
+/* End PBXToolTarget section */
+
+/* Begin XCBuildConfiguration section */
+		E1CE2A2012FA43C3004496CB /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Development;
+		};
+		E1CE2A2112FA43C3004496CB /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Deployment;
+		};
+		E1CE2A2212FA43C3004496CB /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Default;
+		};
+		E1CE2A2312FA43C3004496CB /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/bin;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = index.cgi;
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		E1CE2A2412FA43C3004496CB /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				INSTALL_PATH = /usr/bin;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = index.cgi;
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		E1CE2A2512FA43C3004496CB /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INSTALL_PATH = /usr/bin;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = index.cgi;
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Default;
+		};
+		E1CE2A3812FA43E9004496CB /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/bin;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = index.cgi;
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		E1CE2A3912FA43E9004496CB /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				INSTALL_PATH = /usr/bin;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = index.cgi;
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		E1CE2A3A12FA43E9004496CB /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INSTALL_PATH = /usr/bin;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = index.cgi;
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1CE2A2612FA43C3004496CB /* Build configuration list for PBXProject "osxpass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1CE2A2012FA43C3004496CB /* Development */,
+				E1CE2A2112FA43C3004496CB /* Deployment */,
+				E1CE2A2212FA43C3004496CB /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		E1CE2A2712FA43C3004496CB /* Build configuration list for PBXToolTarget "passwd (Tool)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1CE2A2312FA43C3004496CB /* Development */,
+				E1CE2A2412FA43C3004496CB /* Deployment */,
+				E1CE2A2512FA43C3004496CB /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		E1CE2A3712FA43E9004496CB /* Build configuration list for PBXNativeTarget "passwd (Tool) (Upgraded)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1CE2A3812FA43E9004496CB /* Development */,
+				E1CE2A3912FA43E9004496CB /* Deployment */,
+				E1CE2A3A12FA43E9004496CB /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2DD693E205DB15F1005A0DAE /* Project object */;
+}
