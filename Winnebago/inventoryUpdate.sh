@@ -69,6 +69,5 @@ setInstallPercentage 90.00
 
 StatusMSG $ScriptName "Running tool update script..." uistatus 0.5
 
-$jamf policy -trigger nikeadutility
-
+$jamf policy -trigger winnebagoexample
 die 0
