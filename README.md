@@ -1,5 +1,5 @@
 # Winnebago
-### Downloading & Installing the toolNew Page Edit Page Page History
+### Downloading & Installing the tool
 git clone the tool ( you can use the http://mac.github.com client ).
 Copy the example configuration file https://github.com/dev318/winnebago/downloads
 Rename the configuration file to .winnebago.conf in the main xcode project directory
