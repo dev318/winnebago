@@ -36,7 +36,7 @@ while getopts "u:p:o:l: h" CredInputs; do
 	esac
 done
 
-declare -x PLIST_ID="com.nike.ad.utility"
+declare -x PLIST_ID="com.github.winnebago"
 declare -x PLIST_PATH="/Library/LaunchDaemons/${PLIST_ID:?}.plist"
 
 declare -xr VSControl="/usr/local/Mcafee/AntiMalware/VSControl"
@@ -103,14 +103,14 @@ $defaults write /Library/Preferences/com.apple.NetworkAuthorization UseDefaultNa
 $defaults write /Library/Preferences/com.apple.NetworkAuthorization UseShortName -bool YES
 
 # Extention Attribute
-$defaults write /Library/Application\ Support/Technician\ Resources/com.nike.ad LocalUserName "$Username"
-$defaults write /Library/Application\ Support/Technician\ Resources/com.nike.ad NetworkUserName "$NewUserName"
+$defaults write /Library/Application\ Support/Winnebago/com.github.winnebago LocalUserName "$Username"
+$defaults write /Library/Application\ Support/Winnebago/com.github.winnebago NetworkUserName "$NewUserName"
 
 
 setInstallPercentage 90.00
 
 # Deleting the Application
 # Removed this as picture don't show if we do this
-#$mv "/Library/Application Support/Technician Resources/NikeADUtility.app" /private/tmp/
+#$mv "/Library/Application Support/Winnebago/Winnebago.app" /private/tmp/
 
 die 0

@@ -56,7 +56,7 @@ declare -x SYSTEMVERSION="/System/Library/CoreServices/SystemVersion.plist"
 declare -x OSVER="$("$defaults" read "${SYSTEMVERSION%.plist}" ProductVersion )"
 declare -x CONFIGFILE="${RUNDIRECTORY:?}/.MacMigrator.conf"
 declare -x BUILD_VERSION="20122702"
-declare -x SCRIPT_DOMAIN="com.nike"
+declare -x SCRIPT_DOMAIN="com.github.winnebago"
 
 [ "$EUID" != 0 ] && 
 	printf "%s\n" "This script requires root access!" && exit 1

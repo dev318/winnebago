@@ -34,7 +34,7 @@
 	<dict>
 		<key>mainRunLoopScripts</key>
 		<dict>
-			<key>com.nike.adutility</key>
+			<key>com.github.winnebago</key>
 			<dict>
 				<key>headerTitle</key>
 				<string>Winnebago Scripts</string>

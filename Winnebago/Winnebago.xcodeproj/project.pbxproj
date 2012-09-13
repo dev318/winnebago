@@ -138,7 +138,7 @@
 		E19CDA96147586470095DCE7 /* StatusMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusMessage.m; sourceTree = "<group>"; };
 		E19CDA98147586580095DCE7 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		E19CDA99147586580095DCE7 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
-		E19CDA9B147586670095DCE7 /* com.github.winnebago.settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = com.github.winnebago.settings.plist; sourceTree = "<group>"; };
+		E19CDA9B147586670095DCE7 /* com.github.winnebago.settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = com.github.winnebago.settings.plist; path = ../../winnebago/Winnebago/com.github.winnebago.settings.plist; sourceTree = "<group>"; };
 		E19CDB0B14758EC40095DCE7 /* changeKeychainPass.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = changeKeychainPass.sh; sourceTree = "<group>"; };
 		E19CDB0C14758EC40095DCE7 /* checkBind.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = checkBind.sh; sourceTree = "<group>"; };
 		E19CDB0D14758EC40095DCE7 /* checkUser.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = checkUser.sh; sourceTree = "<group>"; };
