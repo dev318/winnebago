@@ -1,4 +1,12 @@
 # Winnebago
+### Downloading & Installing the toolNew Page Edit Page Page History
+git clone the tool ( you can use the http://mac.github.com client ).
+Copy the example configuration file https://github.com/dev318/winnebago/downloads
+Rename the configuration file to .winnebago.conf in the main xcode project directory
+Edit the dialog text in to com.github.winnebago.settings.plist & .winnebago.conf & html file.
+sudo ./pkg_build.sh in the main directory
+
+
 ## A user migration suite
 Winnebago is a tool that I have been working ( and have rewritten ) for a couple of years.
 It basically a cocoa wrapper for a series of scripts that need to run in a specific order.
