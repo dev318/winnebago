@@ -1,0 +1,23 @@
+README
+Feb 23, 2004
+
+Everything needed is in the build directory.
+
+index.cgi - the CGI written in C for changing passwords on an OS X Server
+images - the folder of images that goes with the web application
+
+Place index.cgi and the folder of images in a web accessible directory where 
+CGIs may be executed to install and use the web application.
+
+Point your browser to the CGI.
+
+This program was developed using Apple Project Builder Version 2.1 which is
+part of the Apple Developer Tools.
+
+
+Notes: 
+1. the code for osxpass (index.cgi) is a derivative work of passwd which is licensed under the Apple Public Source License.  
+The derivitative work was developed by Dale Musser at eyebits studios, February 2004. 
+Source code will be provided by a "Request for xpass source" to  development@eyebits.com
+2. For a copy of the license go to http://www.opensource.apple.com/apsl/
+3. This documentation is Copyright 2004, Dale Musser, eyebits studios, but it may be freely distributed as long as attribution for the work remains.

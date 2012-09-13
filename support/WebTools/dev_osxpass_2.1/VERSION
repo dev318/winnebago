@@ -1,0 +1,14 @@
+VERSION
+Feb 23, 2004
+
+Version=2.1
+
+Version 2.1 Notes
+Fixed problem with not properly processing encoded values in posted data.
+Changes visual interface to remove Apple logo and control panel icon.
+
+
+Version 2.0 Notes
+The first version was based on a Perl CGI calling a command line program called xpass.  Following peer review of the web application it was determined that this was an insecure way of doing things.
+
+This version dispenses with the Perl CGI.  The CGI is entirely written in C.  No external programs are called.  This also makes things simpler.  suexec is not required as in the first version.  All that is required is that index.cgi and the folder of images be placed in a web accessible directory with the ability to execute CGIs enabled.
