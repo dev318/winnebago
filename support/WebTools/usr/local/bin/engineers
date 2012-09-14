@@ -1,0 +1,48 @@
+#!/bin/bash
+id="/usr/bin/id"
+TotalUsersLog="/tmp/engineersAll.log"
+TotalMigratedLog="/tmp/engineersComplete.log"
+NotMigratedLog="/tmp/engineersNotMigrated.log"
+DisabledUsersLog="/tmp/engineersDisabled.log"
+[ -f "$TotalUsersLog" ] &&
+                rm "$TotalUsersLog"
+[ -f "$TotalMigratedLog" ] &&
+                rm "$TotalMigratedLog"
+[ -f "$DisabledUsersLog" ] &&
+                rm "$DisabledUsersLog"
+[ -f "$NotMigratedLog" ] &&
+        rm "$NotMigratedLog"
+for USER_NAME in $(dscl /LDAPv3/od.example.com -read /Groups/engineer Member | sed 's/^Member: //') ; do
+        declare PassTest="$(dscl /Active\ Directory/All\ Domains -authonly "$USER_NAME" "${USER_NAME}sharesecret" 2>&1)"
+        declare ExitValue="$?"
+        let TotalUserCount++
+        echo "$USER_NAME" >> "$TotalUsersLog"
+        # eDSAuthFailed 
+        if [ "$PassTest" != "${PassTest/-14090//}" ] ; then
+                # LDAP is top of search path
+                declare -xi UsersID="$($id -u $USER_NAME)"
+                declare -x samAccountName="$(dscl /Active\ Directory/All\ Domains -search /Users UniqueID "$UsersID" | awk '{print $1;exit}')"
+                declare -xi AliasUsersID="$(dscl /Active\ Directory/All\ Domains -read "/Users/$USER_NAME" UniqueID 2>/dev/null | awk '{print $NF}')"
+                if [ "$AliasUsersID" -eq 0 ]; then
+                        :
+                elif [ "$AliasUsersID" = "$UsersID" ] ; then
+                        if [ "$samAccountName" != "$USER_NAME" ] ; then
+                                echo "$USER_NAME" >>"$ChangedUsersLog"
+                                let ChangedUsers++
+                                continue
+                        fi
+                fi
+                let TotalMigratedCount++
+                echo "$USER_NAME" >> "$TotalMigratedLog"
+        fi
+        # eDSAuthAccountExpired
+        if [ "$PassTest" != "${PassTest/-14168//}" ] ; then
+                let DisabledUserCount++
+                echo  "$USER_NAME" >> "$DisabledUsersLog"
+        fi
+        if dscl /Active\ Directory/All\ Domains -authonly "$USER_NAME" "${USER_NAME}2011" &>/dev/null ; then
+                let NotMigrated++
+                echo "$USER_NAME" >> "$NotMigratedLog"
+        fi
+done
+open "$NotMigratedLog"
