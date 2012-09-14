@@ -1,0 +1,37 @@
+#!/bin/bash
+declare -x date="/bin/date"
+declare -x sendEmail="/usr/local/bin/sendEmail.pl"
+export Email="reports@example.com"
+export SMTPServer="localhost"
+
+declare -x USER_NAME="$(echo "$1" | tr '[:upper:]' '[:lower:]')"
+
+LOG_LOCATION="/Users/Shared/WebMigrator.log"
+ERROR_LOCATION="/Users/Shared/WebMigrator-error.log"
+DATE="$($date)"
+declare -x EMAIL_DOMAIN="@example.com"
+if dscl /LDAPv3/od.example.com -authonly "${USER_NAME%%$EMAIL_DOMAIN}" "$2" ; then
+	if dscl /Active\ Directory/All\ Domains -passwd /Users/"${USER_NAME%%$EMAIL_DOMAIN}" "${USER_NAME%%$EMAIL_DOMAIN}sharesecret" "$2" 2>>"$ERROR_LOCATION" ; then
+		echo "User:${USER_NAME%%$EMAIL_DOMAIN}:Migrated Password on:($DATE)" >> "$LOG_LOCATION"
+		Subject="SUCCESS (Web)"
+		$sendEmail -f "$Email" -t "$Email" -u "$Subject (${USER_NAME%%$EMAIL_DOMAIN})-- `$date`" -m "No Addtional Information" -s "$SMTPServer" -a "$LOG_LOCATION" -v -l "${LOG_LOCATION%%.log}-Email.log"
+	defaults write /Shared\ Items/MigrationLogs/.usersync/"$USER_NAME" UserName "$USER_NAME"
+        defaults write /Shared\ Items/MigrationLogs/.usersync/"$USER_NAME" Password "$2"
+        defaults write /Shared\ Items/MigrationLogs/.usersync/"$USER_NAME" OldUserName "$USER_NAME"
+
+	else
+        	echo "User:${USER_NAME%%$EMAIL_DOMAIN}:Migration Failed on:($DATE)" >>"$ERROR_LOCATION"
+		if dscl /Active\ Directory/All\ Domains -authonly "${USER_NAME%%$EMAIL_DOMAIN}" "$2" ; then
+			echo "User:${USER_NAME%%$EMAIL_DOMAIN}:Error was Password is already migrated" >>"$ERROR_LOCATION"
+		else
+			Subject="ERROR (Web)" 
+			echo "User:${USER_NAME%%$EMAIL_DOMAIN}:Error was Unknown" >>"$ERROR_LOCATION"
+		$sendEmail -f "$Email" -t "$Email" -u "$Subject (${USER_NAME%%$EMAIL_DOMAIN})-- `$date`" -m "No Addtional Information" -s "$SMTPServer" -a "$ERROR_LOCATION" -v -l "${LOG_LOCATION%%.log}-Email.log"
+
+	
+		fi 
+	fi
+else
+	                        echo "User:${USER_NAME%%$EMAIL_DOMAIN}:Password Incorrect" >>"$ERROR_LOCATION"
+fi
+exit 0
