@@ -1,0 +1,14 @@
+#!/bin/bash
+declare -x STALE_USERS_REPORT="/Users/Shared/NonMigratedLastLogin.csv"
+rm "$STALE_USERS_REPORT"
+IFS=$'\n'
+for LINE in `ssh root@od.example.com mkpassdb -dump` ; do
+	declare USER_NAME="$(echo "$LINE" | awk '{print $4}')"
+	declare LAST_LOGIN_DATE="$(echo "$LINE" | awk '{print $5}')"
+        declare LAST_LOGIN_TIME="$(echo "$LINE" | awk '{print $6}')"
+	echo "Processing: $USER_NAME"
+	[ "${#USER_NAME}" -eq 0 ] && continue
+	if grep "$USER_NAME" /Users/Shared/NotMigratedLog.log &>/dev/null ; then
+		echo "$USER_NAME,$LAST_LOGIN_DATE,$LAST_LOGIN_TIME" >>"$STALE_USERS_REPORT"
+	fi
+done
