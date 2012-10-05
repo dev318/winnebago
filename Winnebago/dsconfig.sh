@@ -63,7 +63,7 @@ declare -x SCRIPT_DOMAIN="com.github.winnebago"
 
 # -- Start the script log
 # Set to "VERBOSE" for more logging prior to using -v
-/bin/mkdir -p /Library/Logs/Nike
+/bin/mkdir -p /Library/Logs/Winnebago
 declare -x LOGLEVEL="VERBOSE" SCRIPTLOG="/Library/Logs/Winnebago/Winnebago.log"
 declare -xi LOG_MAX_SIZE=5
 

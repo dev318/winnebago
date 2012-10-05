@@ -13,7 +13,7 @@
 	<key>requiredDays</key>
 	<integer>5</integer>
 	<key>companyName</key>
-	<string>Nike</string>
+	<string>318</string>
 	<key>vpnToolPath</key>
 	<string>/Applications/Cisco/Cisco AnyConnect Secure Mobility Client.app</string>
 	<key>vpnBundleID</key>
@@ -386,18 +386,18 @@
 		</dict>
 	</dict>
 	<key>processCompleteText</key>
-	<string>Congratulations! From this point on you will log into your Mac using your Winnebago User
+	<string>Congratulations! From this point on you will log into your Mac using your network User
 ID and password. Once you have rebooted, no further action on your part should be required.
 Below is a summary of the steps taken during this process and their results.</string>
 	<key>networkCheckText</key>
-	<string>To continue, you MUST first be connected to the Winnebago network.
-Ensure that you are connected to AirFlight , AnyConnect, or plug into the Nike network directly via a network cable.</string>
+	<string>To continue, you MUST first be connected to the corporate network.
+Ensure that you are connected wirelessly with an ethernet cable.</string>
 	<key>revertText</key>
 	<string>Your Mac encountered an issue. It is recommended that when prompted you try to run this tool again. If you continue to have issues or require assistance, contact 2525.
 ￼
 Note: All changes have been reversed, but this tool will run again in 3 hours. You will log into your Mac using your original local user ID and password until the tool successfully completes.</string>
 	<key>failureText</key>
-	<string>Your Mac encountered a critical error and was unable to recover. Please contact 0000 for technical assistance.
+	<string>Your Mac encountered a critical error and was unable to recover. Please contact the help desk for technical assistance.
 Note: All of your data should be safe. Technical assistance may be required in order to allow you to login to your Mac.</string>
 </dict>
 </plist>

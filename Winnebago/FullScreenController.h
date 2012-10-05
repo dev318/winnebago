@@ -1,6 +1,6 @@
 //
 //  FullScreenController.h
-//  NikeADUtility
+//  Winnebago
 //
 //  Created by Zack Smith on 4/17/12.
 //  Copyright 2012 318. All rights reserved.

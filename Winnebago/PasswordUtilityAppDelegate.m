@@ -1578,7 +1578,7 @@
 	// Display a standard alert
 	NSAlert *alert = [[NSAlert alloc] init];
 	[alert addButtonWithTitle:@"Ok"];
-	[alert setMessageText:@"Invalid Nike Password"];
+	[alert setMessageText:@"Invalid Network Password"];
 	[alert setInformativeText:@"The password you entered is not correct"];
 	[alert setAlertStyle:NSWarningAlertStyle];
 	// Updated as our window level is so high we need everthing to be a panel
