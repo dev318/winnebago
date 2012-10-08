@@ -4,7 +4,7 @@
 # 		NAME: 			common.sh
 #
 # 		DESCRIPTION:  	This script contains all the common functions used by Our Scripts
-#               
+#	       
 #		USAGE:			source ./common.sh
 ###############################################################################################
 #		HISTORY:
@@ -169,24 +169,24 @@ deleteBridgeFiles(){
 	$rm -f "$InstallProgressFile" &>/dev/null
 }
 header(){
-        $python -c "print '-' * 80" | $tee -a "${LogFile}"
+	$python -c "print '-' * 80" | $tee -a "${LogFile}"
 }
 
 begin(){
-  header
-  StatusMSG $FUNCNAME "BEGINNING: $ScriptName - $ProjectName" header
-  deleteBridgeFiles
+	header
+	StatusMSG $FUNCNAME "BEGINNING: $ScriptName - $ProjectName" header
+	deleteBridgeFiles
 }
 
 die(){
-  header
-  StatusMSG $FUNCNAME "END: $ScriptName - $ProjectName" header
-  setInstallPercentage 99.00
-  StatusMSG $FUNCNAME "Step Complete" uistatus 0.5
-  deleteBridgeFiles
-  unset CurrentPercentage
-  exec 2>&- # Reset the error redirects
-  exit $1
+	header
+	StatusMSG $FUNCNAME "END: $ScriptName - $ProjectName" header
+	setInstallPercentage 99.00
+	StatusMSG $FUNCNAME "Step Complete" uistatus 0.5
+	deleteBridgeFiles
+	unset CurrentPercentage
+	exec 2>&- # Reset the error redirects
+	exit $1
 }
 
 # Logs fatal errors and exits
@@ -198,26 +198,24 @@ FatalError() {
 }
 
 checkSystemVersion() {
-        StatusMSG $FUNCNAME "END: $ScriptName - $ProjectName" header
-        declare -x defaults="$defaults:="/usr/bin/defaults"}"
-        declare -x SYSTEM_VERSION="/System/Library/CoreServices/SystemVersion.plist"
-        declare -x OSVER="$("$defaults" read "${SYSTEM_VERSION%.plist}" ProductVersion )"
-        case "${OSVER:?}" in
-                10.0* | 10.1* | 10.2* | 10.3* | 10.4*) \
-                        FatalError $FUNCNAME "OS version: $OSVER is too old." ;;
-                10.5*) \
-                        StatusMSG $FUNCNAME "CHECK_OS: OS check: $OS successful!";
-                        export OsVersion="5"; return 0 ;;
-
-                10.6*) \
-                        StatusMSG $FUNCNAME "CHECK_OS: OS check: $OS successful!";
-                        export OsVersion="6"; return 0 ;;
-
-                10.7*) \
-                        StatusMSG $FUNCNAME "CHECK_OS: OS check: $OS successful!";
-                        export OsVersion="7"; return 0 ;;
-                *) \
-                        FatalError $FUNCNAME "Unsupported OS:$OS unknown error";;
+	StatusMSG $FUNCNAME "END: $ScriptName - $ProjectName" header
+	declare -x defaults="$defaults:="/usr/bin/defaults"}"
+	declare -x SYSTEM_VERSION="/System/Library/CoreServices/SystemVersion.plist"
+	declare -x OSVER="$("$defaults" read "${SYSTEM_VERSION%.plist}" ProductVersion )"
+	case "${OSVER:?}" in
+		10.0* | 10.1* | 10.2* | 10.3* | 10.4*) \
+			FatalError $FUNCNAME "OS version: $OSVER is too old." ;;
+		10.5*) \
+			StatusMSG $FUNCNAME "CHECK_OS: OS check: $OS successful!";
+			export OsVersion="5"; return 0 ;;
+		10.6*) \
+			StatusMSG $FUNCNAME "CHECK_OS: OS check: $OS successful!";
+			export OsVersion="6"; return 0 ;;
+		10.7*) \
+			StatusMSG $FUNCNAME "CHECK_OS: OS check: $OS successful!";
+			export OsVersion="7"; return 0 ;;
+		*) \
+			FatalError $FUNCNAME "Unsupported OS:$OS unknown error";;
 	esac
 	return 1
 } # END checkSystemVersion()
@@ -264,26 +262,26 @@ FixUserPermissions() {
 }
 
 disableLionState(){
-  StatusMSG $FUNCNAME "Disabling Lion Systen State Save"
-  declare LOGIN_PLIST="/Users/$NewUser/Library/Preferences/com.apple.loginwindow.plist"
-  declare LOGIN_PLIST_UUID="/Users/$NewUser/Library/Preferences/ByHost/com.apple.loginwindow.${PLATFORM_UUID:?}.plist"
-  
-  if [ -f "$LOGIN_PLIST" ] ; then
-	  $defaults delete "${LOGIN_PLIST%%.plist}" AutoOpenedWindowDictionary
-  else
-    StatusMSG $FUNCNAME "LOGIN_PLIST:$LOGIN_PLIST not found"
-  fi
-  if [ -f "$LOGIN_PLIST_UUID" ] ; then
+	StatusMSG $FUNCNAME "Disabling Lion Systen State Save"
+	declare LOGIN_PLIST="/Users/$NewUser/Library/Preferences/com.apple.loginwindow.plist"
+	declare LOGIN_PLIST_UUID="/Users/$NewUser/Library/Preferences/ByHost/com.apple.loginwindow.${PLATFORM_UUID:?}.plist"
+	
+	if [ -f "$LOGIN_PLIST" ] ; then
+		$defaults delete "${LOGIN_PLIST%%.plist}" AutoOpenedWindowDictionary
+	else
+		StatusMSG $FUNCNAME "LOGIN_PLIST:$LOGIN_PLIST not found"
+	fi
+	if [ -f "$LOGIN_PLIST_UUID" ] ; then
 	$defaults delete "${LOGIN_PLIST_UUID%%.plist}" TALAppsToRelaunchAtLogin
-  else
-     StatusMSG $FUNCNAME "LOGIN_PLIST_UUID:$LOGIN_PLIST_UUID not found"
-     $mv "/Users/$NewUser/Library/Preferences/ByHost/com.apple.loginwindow"* /tmp/
-  fi 
+	else
+		 StatusMSG $FUNCNAME "LOGIN_PLIST_UUID:$LOGIN_PLIST_UUID not found"
+		 $mv "/Users/$NewUser/Library/Preferences/ByHost/com.apple.loginwindow"* /tmp/
+	fi 
 	declare STATE_DIR="/Users/$NewUser/Library/Saved Application State"
 	if [ -d "$STATE_DIR" ] ; then
-	  declare DISABLED_STATE_DIR="/Users/$NewUser/Library/Saved Application State Disabled"
-	  $mkdir "$DISABLED_STATE_DIR" 2>/dev/null
-	  $mv "$STATE_DIR"/$Identifier.* "$DISABLED_STATE_DIR/" 2>/dev/null
+		declare DISABLED_STATE_DIR="/Users/$NewUser/Library/Saved Application State Disabled"
+		$mkdir "$DISABLED_STATE_DIR" 2>/dev/null
+		$mv "$STATE_DIR"/$Identifier.* "$DISABLED_STATE_DIR/" 2>/dev/null
 	fi
 }
 
@@ -374,7 +372,7 @@ FixHDOwnership(){
 		fi
 		StatusMSG $FUNCNAME "Took $TimeHuman $TimeUnit to Run" notice
 	fi
-  	disableLionState
+	disableLionState
 	StatusMSG $FUNCNAME "END: Finished $ScriptName:$FUNCNAME" header
 }
 
@@ -412,15 +410,15 @@ FileOwnershipUpdate(){
 		else
 			# Causes fatel errors on FV updated above
 			if [ -d "/Users/$NewUser" ] ; then
-			  StatusMSG $FUNCNAME "NOTICE: Found existing home directory ( from user creation? ) at path"
-			  shopt -s nocasematch
-                          if [[ $NewUser = $LocalUser ]] ; then
-				StatusMSG $FUNCNAME "NOTICE: Found case insensitive match on usernames preserving home folder"
-                          else
-			    $mv -vf "/Users/$NewUser" "/Users/.${NewUser}.existing" &&
-			  			  StatusMSG $FUNCNAME "NOTICE: Renamed to /Users/.${NewUser}.existing" 
-			  fi
-			  shopt -u nocasematch
+				StatusMSG $FUNCNAME "NOTICE: Found existing home directory ( from user creation? ) at path"
+				shopt -s nocasematch
+				if [[ $NewUser = $LocalUser ]] ; then
+					StatusMSG $FUNCNAME "NOTICE: Found case insensitive match on usernames preserving home folder"
+				else
+					$mv -vf "/Users/$NewUser" "/Users/.${NewUser}.existing" &&
+						StatusMSG $FUNCNAME "NOTICE: Renamed to /Users/.${NewUser}.existing" 
+				fi
+				shopt -u nocasematch
 			fi
 			$mv -vf "/Users/$OldUser" "/Users/$NewUser" ||
 				FatalError "FAILED - to migrate user directory from /Users/$OldUser to /Users/$NewUser"
