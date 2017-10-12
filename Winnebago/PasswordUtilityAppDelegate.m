@@ -1306,7 +1306,7 @@
 		[alert setMessageText:@"Please plugin AC adapter"];
 		[alert setInformativeText:@"This process may take around 15 mins and should be performed when your laptop is plugged into a wall outlet\
 		 "];
-		[alert setAlertStyle:NSWarningAlertStyle];
+		[alert setAlertStyle:NSAlertStyleWarning];
 		//[alert runModal];
 		[alert beginSheetModalForWindow:window
 						  modalDelegate:self
@@ -1403,7 +1403,7 @@
 
 	[ [fullScreenWindow window] setOpaque:NO];
 	if ([[fullScreenWindow window] respondsToSelector:@selector(setStyleMask:)]) {
-		[ [fullScreenWindow window] setStyleMask:NSBorderlessWindowMask];
+		[ [fullScreenWindow window] setStyleMask:NSWindowStyleMaskBorderless];
 	}
 	
 	[ [fullScreenWindow window] setBackgroundColor:[NSColor colorWithCalibratedWhite:1.0 alpha:0.75]];
@@ -1528,7 +1528,7 @@
 	[alert addButtonWithTitle:@"Cancel"];
 	[alert setMessageText:@"Passwords do not match"];
 	[alert setInformativeText:@"Please retype your NEW passwords again."];
-	[alert setAlertStyle:NSWarningAlertStyle];
+	[alert setAlertStyle:NSAlertStyleWarning];
 	[alert runModal];
 	[alert release];
 	[pool release];
@@ -1545,7 +1545,7 @@
 	[alert addButtonWithTitle:@"Ok"];
 	[alert setMessageText:@"Username not found"];
 	[alert setInformativeText:[NSString stringWithFormat:@"Please check the %@ username entered",[settings objectForKey:@"companyName"]]];
-	[alert setAlertStyle:NSWarningAlertStyle];
+	[alert setAlertStyle:NSAlertStyleWarning];
 	[alert runModal];
 	[alert release];
 	[pool release];
@@ -1578,9 +1578,9 @@
 	// Display a standard alert
 	NSAlert *alert = [[NSAlert alloc] init];
 	[alert addButtonWithTitle:@"Ok"];
-	[alert setMessageText:@"Invalid Nike Password"];
+	[alert setMessageText:@"Invalid Password"];
 	[alert setInformativeText:@"The password you entered is not correct"];
-	[alert setAlertStyle:NSWarningAlertStyle];
+	[alert setAlertStyle:NSAlertStyleWarning];
 	// Updated as our window level is so high we need everthing to be a panel
 	[alert beginSheetModalForWindow:window
 					  modalDelegate:self

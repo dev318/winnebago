@@ -54,7 +54,7 @@ declare -x SCRIPT="${0##*/}" ; SCRIPTNAME="${SCRIPT%%\.*}"
 declare -x SCRIPTPATH="$0" RUNDIRECTORY="${0%/*}"	
 declare -x SYSTEMVERSION="/System/Library/CoreServices/SystemVersion.plist"
 declare -x OSVER="$("$defaults" read "${SYSTEMVERSION%.plist}" ProductVersion )"
-declare -x CONFIGFILE="${RUNDIRECTORY:?}/.MacMigrator.conf"
+declare -x CONFIGFILE="${RUNDIRECTORY:?}/.winnebago.conf"
 declare -x BUILD_VERSION="20122702"
 declare -x SCRIPT_DOMAIN="com.github.winnebago"
 
@@ -63,7 +63,7 @@ declare -x SCRIPT_DOMAIN="com.github.winnebago"
 
 # -- Start the script log
 # Set to "VERBOSE" for more logging prior to using -v
-/bin/mkdir -p /Library/Logs/Nike
+/bin/mkdir -p /Library/Logs/Winnebago
 declare -x LOGLEVEL="VERBOSE" SCRIPTLOG="/Library/Logs/Winnebago/Winnebago.log"
 declare -xi LOG_MAX_SIZE=5
 
@@ -285,6 +285,31 @@ checkSystemVersion() {
 		10.7*) \
 		statusMessage passed "CHECK_OS: OS check: $OSVER successful!";
 		export OS="N"; return 0 ;;
+
+        10.8*) \
+        statusMessage passed "CHECK_OS: OS check: $OSVER successful!";
+        export OS="N"; return 0 ;;
+
+        10.9*) \
+        statusMessage passed "CHECK_OS: OS check: $OSVER successful!";
+        export OS="N"; return 0 ;;
+
+        10.10*) \
+        statusMessage passed "CHECK_OS: OS check: $OSVER successful!";
+        export OS="N"; return 0 ;;
+
+        10.11*) \
+        statusMessage passed "CHECK_OS: OS check: $OSVER successful!";
+        export OS="N"; return 0 ;;
+
+        10.12*) \
+        statusMessage passed "CHECK_OS: OS check: $OSVER successful!";
+        export OS="N"; return 0 ;;
+
+        10.13*) \
+        statusMessage passed "CHECK_OS: OS check: $OSVER successful!";
+        export OS="N"; return 0 ;;
+
 		*) \
 		die ERROR "CHECK_OS:$LINENO Unsupported OS:$OSVER unknown error" 192 ;;
 	esac
@@ -655,98 +680,93 @@ declare -i FUNCSECONDS="$SECONDS" # Capture start time
 return ${EXITVALUE:-0} 
 } # END setNetworkTimeServer()
 
-genComputerName(){
-statusMessage header "FUNCTION: #       ${FUNCNAME}" ; unset EXITVALUE
-declare -x ASSET_TAG="$($nvram -p "$ASSET_TAG_KEY" |
-                        $awk '/^asset-tag/{print $NF;exit}')"
+#genComputerName(){
+#statusMessage header "FUNCTION: #       ${FUNCNAME}" ; unset EXITVALUE
+#declare -x ASSET_TAG="$($nvram -p "$ASSET_TAG_KEY" |
+#                        $awk '/^asset-tag/{print $NF;exit}')"
 # Update the tag in firmware and ARD
-if [ -z "$ASSET_TAG" ] ; then
-	guessTagFromName && setTagInFW "${ASSET_TAG:?}" &&
-	if [ "$SET_TAG_IN_ARD" = "YES" ] ; then
-		setTagInARD "$ASSET_TAG"
-	fi
-fi
-export COMPNAME="$("$awk" 'BEGIN {{
-	format=ENVIRON["NAME_FORMAT"]
-	# Read in the format varible
-	assettag=ENVIRON["ASSET_TAG"]
-	gsub("%a",assettag,format)
-	macaddr=ENVIRON["MACADDR"]
-	gsub("%m",macaddr,format)
-	# sub Mac Address for %m
-	ld=ENVIRON["LD"]
-	gsub("%c",ld,format)
-	# sub the Computer type for %c
-	os=ENVIRON["OS"]
-	gsub("%o",os,format)
-	# sub the OS version type for %o
-	delimiter=ENVIRON["DELIMITER"]
-	gsub("%d",delimiter,format)
-	# sub the Delimter type for %d
-	sitename=ENVIRON["SITENAME"]
-	gsub("%s",sitename,format)
-	# sub the Site Name for %s
-	customname=ENVIRON["CUSTOM_NAME"]
-        gsub("%n",customname,format)
-	format=toupper(format)
-	# Make upper case
- 	print format}}')"
-
-       # Double check for server
-	# Disabled for Lion as Client can have server installed
-#	if [ -f '/System/Library/CoreServices/ServerVersion.plist' ] ; then
-#	  	statusMessage notice "Server Detected using current hostname:$($hostname)"
-#	  	export COMPNAME="$($hostname -s)" 
+#if [ -z "$ASSET_TAG" ] ; then
+#	guessTagFromName && setTagInFW "${ASSET_TAG:?}" &&
+#	if [ "$SET_TAG_IN_ARD" = "YES" ] ; then
+#		setTagInARD "$ASSET_TAG"
 #	fi
+#fi
+#export COMPNAME="$("$awk" 'BEGIN {{
+#	format=ENVIRON["NAME_FORMAT"]
+	# Read in the format varible
+#	assettag=ENVIRON["ASSET_TAG"]
+#	gsub("%a",assettag,format)
+#	macaddr=ENVIRON["MACADDR"]
+#	gsub("%m",macaddr,format)
+	# sub Mac Address for %m
+#	ld=ENVIRON["LD"]
+#	gsub("%c",ld,format)
+	# sub the Computer type for %c
+#	os=ENVIRON["OS"]
+#	gsub("%o",os,format)
+	# sub the OS version type for %o
+#	delimiter=ENVIRON["DELIMITER"]
+#	gsub("%d",delimiter,format)
+	# sub the Delimter type for %d
+#	sitename=ENVIRON["SITENAME"]
+#	gsub("%s",sitename,format)
+	# sub the Site Name for %s
+#	customname=ENVIRON["CUSTOM_NAME"]
+#        gsub("%n",customname,format)
+#	format=toupper(format)
+	# Make upper case
+# 	print format}}')"
 
-	statusMessage progress "Assembled Computer name: ${COMPNAME:?}"
-	export ADCOMPNAME="$("$awk" 'BEGIN {
-	adname=ENVIRON["COMPNAME"]
-	gsub(" ","-",adname)
-	# Change any spaces to - to follow old DNS conventions
-	{adname=tolower(adname)}
-	# Make lowercase ,as the plugin will anyway when we bind
-	{adname=substr(adname,1,15)}
-	# Trunicate the name to 15 Characters per basename standards
- 	{print adname}}')"
-	declare CURRENTCOMPNAME="$( "$dsconfigad" -show |
-		"$awk" 'BEGIN { FS=" = " }
-		$0~/^.*Computer Account/{
-		# Find the Computer Account Domain line
-		sub(" ","",$2) # Remove white space
-		currentcompname=$2
-		if ( currentdomain == ENVIRON["ADCOMPNAME"] )
-			{print currentcompname ; exit 0 }
-		else
-		        {print currentcompname ; exit 1 }
-		}')"
-		statusMessage verbose "Assembleing name with format:$NAME_FORMAT"
-		if [ "${AD_KEEP_NAME}" = "YES" ] ; then
-			if [ "${CURRENTCOMPNAME:="$ADCOMPNAME"}" != "${ADCOMPNAME:-"none"}" ] ; then
-				export ADCOMPNAME="$CURRENTCOMPNAME"
-				export COMPNAME="$CURRENTCOMPNAME"
-				statusMessage notice "COMPNAME: Old name:${CURRENTCOMPNAME} does not match:${ADCOMPNAME}"	
-				statusMessage notice "Setting new name to old name"
-			fi
-		fi
-}
 
-setComputerNames(){ # Set the local "Mac" computer names
-statusMessage header "FUNCTION: #	${FUNCNAME}" ; unset EXITVALUE
-	declare -i FUNCSECONDS="$SECONDS" # Capture start time
-	declare scutil="${scutil:="/usr/sbin/scutil"}"
-	statusMessage verbose "Set AD computer name to:$ADCOMPNAME"
-	"$scutil" --set LocalHostName ${COMPNAME:?} >> "${SCRIPTLOG:?}" &&
-		statusMessage passed "LOCALHOSTNAME: set to ${COMPNAME:?}.local"
-	"$scutil" --set ComputerName "${COMPNAME:?}" >> "${SCRIPTLOG:?}" &&
-        	statusMessage passed "COMPUTERNAME: set to ${COMPNAME:?}"
-	"$scutil" --set HostName "${ADCOMPNAME:?}.${DNS_SUFFIX:?}" >> "${SCRIPTLOG:?}" &&
-        	statusMessage passed "HOSTNAME: set to ${COMPNAME:?}"
-	declare -i FUNCTIME=$(( ${SECONDS:?} - ${FUNCSECONDS:?} ))
-[ "$FUNCTIME" -gt 0 ] &&
-	statusMessage verbose "TIME:$FUNCNAME:Took $FUNCTIME seconds"
-return 0
-} # END setComputerNames()
+
+#	statusMessage progress "Assembled Computer name: ${COMPNAME:?}"
+#	export ADCOMPNAME="$("$awk" 'BEGIN {
+#	adname=ENVIRON["COMPNAME"]
+#	gsub(" ","-",adname)
+#	# Change any spaces to - to follow old DNS conventions
+#	{adname=tolower(adname)}
+#	# Make lowercase ,as the plugin will anyway when we bind
+#	{adname=substr(adname,1,15)}
+#	# Trunicate the name to 15 Characters per basename standards
+#	{print adname}}')"
+#	declare CURRENTCOMPNAME="$( "$dsconfigad" -show |
+#		"$awk" 'BEGIN { FS=" = " }
+#		$0~/^.*Computer Account/{
+#		# Find the Computer Account Domain line
+#		sub(" ","",$2) # Remove white space
+#		currentcompname=$2
+#		if ( currentdomain == ENVIRON["ADCOMPNAME"] )
+#			{print currentcompname ; exit 0 }
+#		else
+#		        {print currentcompname ; exit 1 }
+#		}')"
+#		statusMessage verbose "Assembleing name with format:$NAME_FORMAT"
+#		if [ "${AD_KEEP_NAME}" = "YES" ] ; then
+#			if [ "${CURRENTCOMPNAME:="$ADCOMPNAME"}" != "${ADCOMPNAME:-"none"}" ] ; then
+#				export ADCOMPNAME="$CURRENTCOMPNAME"
+#				export COMPNAME="$CURRENTCOMPNAME"
+#				statusMessage notice "COMPNAME: Old name:${CURRENTCOMPNAME} does not match:${ADCOMPNAME}"
+#				statusMessage notice "Setting new name to old name"
+#			fi
+#		fi
+#}
+
+#setComputerNames(){ # Set the local "Mac" computer names
+#statusMessage header "FUNCTION: #	${FUNCNAME}" ; unset EXITVALUE
+#	declare -i FUNCSECONDS="$SECONDS" # Capture start time
+#	declare scutil="${scutil:="/usr/sbin/scutil"}"
+#	statusMessage verbose "Set AD computer name to:$ADCOMPNAME"
+#	"$scutil" --set LocalHostName ${COMPNAME:?} >> "${SCRIPTLOG:?}" &&
+#		statusMessage passed "LOCALHOSTNAME: set to ${COMPNAME:?}.local"
+#	"$scutil" --set ComputerName "${COMPNAME:?}" >> "${SCRIPTLOG:?}" &&
+#        	statusMessage passed "COMPUTERNAME: set to ${COMPNAME:?}"
+#	"$scutil" --set HostName "${ADCOMPNAME:?}.${DNS_SUFFIX:?}" >> "${SCRIPTLOG:?}" &&
+#        	statusMessage passed "HOSTNAME: set to ${COMPNAME:?}"
+#	declare -i FUNCTIME=$(( ${SECONDS:?} - ${FUNCSECONDS:?} ))
+#[ "$FUNCTIME" -gt 0 ] &&
+#	statusMessage verbose "TIME:$FUNCNAME:Took $FUNCTIME seconds"
+#return 0
+#} # END setComputerNames()
 
 setADTimeout(){ # Modified from Philip Rinehart's python script on macenterprise
 	statusMessage header "FUNCTION: #	${FUNCNAME}" ; unset EXITVALUE

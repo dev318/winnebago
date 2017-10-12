@@ -86,20 +86,20 @@ if [ -d "$LocalMount" ] ; then
 	[ -d "$LocalMount" ] && 
 		$mv "$LocalMount" "$LocalMount_$$$RANDOM"
 fi
-StatusMSG $ScriptName "Connecting to $ShareServer"
+#StatusMSG $ScriptName "Connecting to $ShareServer"
 # Create the local directory if it does not exist
-if [ ! -d "$LocalMount" ] ; then
-	$mkdir "$LocalMount" ||
-		echo "Unable to make directory..."
-else
-	echo "Notice: The share is already mounted"
-fi
-if $ping -c 1 $ShareServer ; then
-	$mount_afp -o nobrowse "afp://$ShareUser:$SharePass@$ShareServer/$SharePoint" "$LocalMount" ||
-		StatusMSG $ScriptName "Mounting the smb share may have failed"
-else
-	StatusMSG $ScriptName "$ShareServer is not accessible"
-fi
+#if [ ! -d "$LocalMount" ] ; then
+#	$mkdir "$LocalMount" ||
+#		echo "Unable to make directory..."
+#else
+#	echo "Notice: The share is already mounted"
+#fi
+#if $ping -c 1 $ShareServer ; then
+#	$mount_afp -o nobrowse "afp://$ShareUser:$SharePass@$ShareServer/$SharePoint" "$LocalMount" ||
+#		StatusMSG $ScriptName "Mounting the smb share may have failed"
+#else
+#	StatusMSG $ScriptName "$ShareServer is not accessible"
+#fi
 setInstallPercentage 50.00
 
 if [ -d "$LocalMount" ] ; then

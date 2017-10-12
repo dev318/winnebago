@@ -26,7 +26,7 @@ exec 2>>"$LogFile"
 [ $# = 0 ] &&
 	FatalError "No arguments Given, but required for $ScriptName.sh"
 
-declare -x jamf="/usr/sbin/jamf"
+declare -x jamf="/usr/local/bin/jamf"
 
 # Parse the input options...
 while getopts "u:p:o:l: h" CredInputs; do
@@ -54,16 +54,12 @@ $jamf recon >>"$LogFile"
 setInstallPercentage 70.00
 
 
-StatusMSG $ScriptName "Enabling system managed preferences" uistatus 0.5
-
-$jamf mcx >>"$LogFile"
-
 setInstallPercentage 80.00
 
 
-StatusMSG $ScriptName "Enabling user managed preferences" uistatus 0.5
+StatusMSG $ScriptName "Enabling user level MDM" uistatus 0.5
 
-$jamf mcx -username "$ADUser" >>"$LogFile"
+$jamf mdm -username "$ADUser" >>"$LogFile"
 
 setInstallPercentage 90.00
 
