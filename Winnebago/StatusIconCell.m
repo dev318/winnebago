@@ -105,7 +105,7 @@
 	
 	[icon drawInRect:NSMakeRect(cellFrame.origin.x+5,yOffset+3,cellFrame.size.height-6, cellFrame.size.height-6)
 			fromRect:NSMakeRect(0,0,[icon size].width, [icon size].height)
-		   operation:NSCompositeSourceOver
+		   operation:NSCompositingOperationSourceOver
 			fraction:1.0];
 	
 	[[NSGraphicsContext currentContext] setImageInterpolation: interpolation];

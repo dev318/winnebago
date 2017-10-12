@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1E87D097E56E8D3BD3143AB26162158BD5257C29+++5F3AF8F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1E87D097E56E8D3BD3143AB26162158BD5257C29+++F0C410A" : 9223372036854775807,
+    "1E87D097E56E8D3BD3143AB26162158BD5257C29+++5F3AF8F" : 9223372036854775807,
+    "1E87D097E56E8D3BD3143AB26162158BD5257C29+++56E6486" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "23059E93-70FB-4A10-AC63-31196AB712DC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1E87D097E56E8D3BD3143AB26162158BD5257C29+++F0C410A" : "winnebago\/",
+    "1E87D097E56E8D3BD3143AB26162158BD5257C29+++5F3AF8F" : "winnebago2\/",
+    "1E87D097E56E8D3BD3143AB26162158BD5257C29+++56E6486" : "winnebago\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Winnebago",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Winnebago\/Winnebago.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dev318\/winnebago.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1E87D097E56E8D3BD3143AB26162158BD5257C29+++56E6486"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/erinmc\/winnebago.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1E87D097E56E8D3BD3143AB26162158BD5257C29+++5F3AF8F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/erinmc\/winnebago.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1E87D097E56E8D3BD3143AB26162158BD5257C29+++F0C410A"
+    }
+  ]
+}

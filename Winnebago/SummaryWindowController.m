@@ -94,7 +94,7 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 		if(debugEnabled)NSLog(@"DEBUG:We Have run out of rows?");
 		return nil;
 	}
-	if(debugEnabled)NSLog(@"DEBUG:Processing row: %d of %d",row,[aBuffer count] -1);
+	if(debugEnabled)NSLog(@"DEBUG:Processing row: %ld of %lu",(long)row,[aBuffer count] -1);
 	NSImage *lrg_green = [[NSImage alloc] initWithContentsOfFile: [ mainBundle
 																   pathForResource:@"lrg_green" ofType:@"png"]];
 	NSImage *lrg_yellow = [[NSImage alloc] initWithContentsOfFile: [ mainBundle

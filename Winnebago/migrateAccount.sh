@@ -34,14 +34,14 @@ showUsage(){
 	printf "%s\n\t" "USAGE:"
 	printf "%s\n\t" 
 #	printf "%s\n\t" " OUTPUT:"
-#	printf "%s\n\t" " -v | # Turn on verbose output"
+	printf "%s\n\t" " -v | # Turn on verbose output"
 #	printf "\033[%s;%s;%sm%s\033[0m\n\t" "1" "44" "37" " -C | # Turn on colorized output"
 #	printf "\033[0m"
 	printf "%s\n\t" " -n | # The  Network ID"
 	printf "%s\n\t" " -u | # The  Bind Account"
 
 	printf "%s\n\t" " -p | # The  Bind Password"
-#	printf "%s\n\t" " -D | # Turn on debug (all function's name will be displayed at runtime)."
+	printf "%s\n\t" " -D | # Turn on debug (all function's name will be displayed at runtime)."
 	printf "%s\n\t" " -U | # The  ZPA Account"
 	printf "%s\n\t" " -P | # The  ZPA Password"
 

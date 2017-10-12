@@ -17,7 +17,7 @@ The exit status of this postinstall is the launchctl command. If the command is 
 `/bin/launchctl load -w /Library/LaunchDaemons/com.github.winnebago.plist`
 
 ### Trigger Policy
-The secondary policy [Winnebago (trigger)] creates the trigger file. This file is keyed to launch (and relaunch) the main application. Until this file is created the launchd item will be loaded but will not launch the application. This file is also referenced by the application itself, it uses the initial creation date to determine how many days (rounded) the user can postPone (defer) the launch of the process. At the end of this process the “postPone” buttons are greyed out. The days interval is calculated using the modification date of “/Library/Caches/.runADUtility” and compared to the requiredDays key in  “/Library/Application Support/Winnebago/Winnebago.app/Contents/Resources/com.github.winnebago.settings.plist”
+The secondary policy [Winnebago (trigger)] contains the payload Files and Commands to create the trigger file ".runADUtility" in "/Library/Caches/". This file is keyed to launch (and relaunch) the main application. Until this file is created the launchd item will be loaded but will not launch the application. This file is also referenced by the application itself, it uses the initial creation date to determine how many days (rounded) the user can postPone (defer) the launch of the process. At the end of this process the “postPone” buttons are greyed out. The days interval is calculated using the modification date of “/Library/Caches/.runADUtility” and compared to the requiredDays key in  “/Library/Application Support/Winnebago/Winnebago.app/Contents/Resources/com.github.winnebago.settings.plist”
 
 ### Launchd Item
 The launchd item is currently stored 

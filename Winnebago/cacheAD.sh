@@ -82,7 +82,7 @@ cacheAccountManualPassword(){
 
 
 userCacher(){
-	StatusMSG $FUNCNAME "Starting Leopard Cache AD Function : $UserName"
+	StatusMSG $FUNCNAME "Starting Cache AD Function : $UserName"
 	setInstallPercentage $CurrentPercentage.10
 		declare UserName="$1"
 		declare PassWord="$2"
@@ -138,23 +138,7 @@ userCacher(){
 		else
 			StatusMSG $FUNCNAME "No user picture found at $UserPicture"
 		fi
-		# Filevault Support
-		# Updated for username changes
-		declare -x HomeDirectoryAttr="$($cat "/Library/Caches/$LocalUser.HomeDirectory" | $sed "s/$LocalUser/$UserName/g" )"
-		# Check for Directory or old style file.
-		if [ -d "/Users/.$UserName/$UserName.sparsebundle" ] ; then
-			StatusMSG $ScriptName "Updating File Vault" uistatus
-			[ "${#HomeDirectoryAttr}" -eq 0 ] &&
-					FatalError "Missing Attribute HomeDirectory"
-			$dscl . -create /Users/$UserName HomeDirectory "$HomeDirectoryAttr"
-		fi
-		if [ -f "/Users/.$UserName/$UserName.sparseimage" ] ; then
-			[ "${#HomeDirectoryAttr}" -eq 0 ] &&
-					FatalError "Missing Attribute HomeDirectory"
-			StatusMSG $ScriptName "Updating File Vault" uistatus
-			$dscl . -create /Users/$UserName HomeDirectory "$HomeDirectoryAttr"
-		fi
-		# If a home folder was created during caching process , move out of way 
+		# If a home folder was created during caching process , move out of way
 		# Should not run using the normal command, here as a safe gaurd.
 
 		if [ ${#HOME_DID_NOT_EXIST} -eq 1 ] ; then
@@ -205,7 +189,7 @@ fi
 setInstallPercentage 50.00
 
 # **** INSERT: Error checking for "Login incorrect" - rollback 
-# ...or prompt for Yelp password again and re-run once - if fail, revert and tell to rerun later
+# ...or prompt for password again and re-run once - if fail, revert and tell to rerun later
 if [ ! -x "$createmobileaccount" ] ; then
 	FatalError "Command Missing! $createmobileaccount , check OS Version"
 fi

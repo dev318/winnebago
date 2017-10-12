@@ -95,7 +95,7 @@ CreateTempUser(){
 	export NewUserGUID="`$uuidgen`"
 	# ABOVE: This really does not do much but can be left in the script
 	StatusMSG $FUNCNAME "Hiding users under 500 from the login window"
-	$defaults write /Library/Preferences/com.apple.loginwindow Hide500Users - bool 
+	$defaults write /Library/Preferences/com.apple.loginwindow Hide500Users - bool true
 	# Create new hidden backup user
 	if ! $id $TMP_USER 2>/dev/null ; then
 		$dscl . -create /Users/$TMP_USER
